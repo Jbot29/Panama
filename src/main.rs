@@ -143,25 +143,20 @@ fn main() {
             .into();
             cc.egui_ctx.set_style(style);
 
-            // Load a system font with broader Unicode coverage (checkmarks, arrows, etc.)
-            // as a fallback for glyphs not in egui's built-in font.
+            // Bundle a font with broad Unicode coverage (superscripts like ˣ, math
+            // symbols, checkmarks, arrows, etc.) as a fallback for glyphs missing
+            // from egui's built-in font. Embedded in the binary so coverage is
+            // identical on every platform — no reliance on OS-specific font paths.
             let mut fonts = egui::FontDefinitions::default();
-            let fallback_paths = [
-                "/System/Library/Fonts/Apple Symbols.ttf",
-                "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
-                "/Library/Fonts/Arial Unicode.ttf",
-            ];
-            for path in &fallback_paths {
-                if let Ok(data) = std::fs::read(path) {
-                    fonts.font_data.insert(
-                        "unicode_fallback".to_owned(),
-                        egui::FontData::from_owned(data).into(),
-                    );
-                    for family in fonts.families.values_mut() {
-                        family.push("unicode_fallback".to_owned());
-                    }
-                    break;
-                }
+            fonts.font_data.insert(
+                "unicode_fallback".to_owned(),
+                egui::FontData::from_static(include_bytes!(
+                    "../assets/fonts/DejaVuSans.ttf"
+                ))
+                .into(),
+            );
+            for family in fonts.families.values_mut() {
+                family.push("unicode_fallback".to_owned());
             }
             cc.egui_ctx.set_fonts(fonts);
 
