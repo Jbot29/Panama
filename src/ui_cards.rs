@@ -157,14 +157,28 @@ pub fn ui_review(app: &mut MyApp, ui: &mut egui::Ui, ctx: &egui::Context) {
     }
 
     if let Some(card) = &app.current_card {
-        if app.show_back {
-            ui.heading(&card.new_back);
-        } else {
-            ui.heading(&card.new_front);
-        }
+        let text = if app.show_back { &card.new_back } else { &card.new_front };
+        let text = text.clone();
+        card_markdown(ui, &mut app.markdown_cache, &text);
     } else {
         ui.label("No card loaded.");
     }
+}
+
+/// Render card text as Markdown so authors can use **bold**, headings, lists,
+/// etc. Plain (non-Markdown) text still renders — we bump the Body style up to
+/// the old heading size so unstyled cards stay just as prominent as before.
+fn card_markdown(ui: &mut egui::Ui, cache: &mut egui_commonmark::CommonMarkCache, text: &str) {
+    ui.scope(|ui| {
+        if let Some(body) = ui
+            .style_mut()
+            .text_styles
+            .get_mut(&egui::TextStyle::Body)
+        {
+            body.size = 24.0;
+        }
+        egui_commonmark::CommonMarkViewer::new().show(ui, cache, text);
+    });
 }
 
 pub fn ui_edit_card(app: &mut MyApp, ui: &mut egui::Ui, ctx: &egui::Context) {
