@@ -1,0 +1,21 @@
+topic = "Genitivpräpositionen"
+
+[[questions]]
+question = "\"_____ seiner Krankheit konnte er nicht kommen.\" (obwohl er krank war)"
+choices = ["Aufgrund", "Wegen", "Trotz", "Während"]
+correct = 2
+
+[[questions]]
+question = "\"_____ der Ferien sind die Schulen geschlossen.\" (in der Zeit von)"
+choices = ["Trotz", "Wegen", "Aufgrund", "Während"]
+correct = 3
+
+[[questions]]
+question = "Welche Präposition verlangt den Genitiv?"
+choices = ["mit", "bei", "wegen", "nach"]
+correct = 2
+
+[[questions]]
+question = "\"_____ der vielen Probleme gelang es ihnen, das Projekt abzuschließen.\""
+choices = ["Wegen", "Trotz", "Durch", "Für"]
+correct = 1

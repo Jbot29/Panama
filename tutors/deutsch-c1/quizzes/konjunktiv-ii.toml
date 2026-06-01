@@ -1,0 +1,21 @@
+topic = "Konjunktiv II"
+
+[[questions]]
+question = "Ergänze: \"Wenn ich mehr Zeit _____, würde ich mehr lesen.\""
+choices = ["hätte", "habe", "hatte", "haben würde"]
+correct = 0
+
+[[questions]]
+question = "Welche Formulierung ist eine höfliche Bitte im Konjunktiv II?"
+choices = ["Können Sie mir helfen?", "Könnten Sie mir helfen?", "Sie helfen mir!", "Helfen Sie mir können?"]
+correct = 1
+
+[[questions]]
+question = "Ergänze: \"Ich wünschte, ich _____ das früher gewusst.\""
+choices = ["hätte", "habe", "hatte", "werde gehabt"]
+correct = 0
+
+[[questions]]
+question = "Was ist die korrekte Konjunktiv-II-Form von \"sein\"?"
+choices = ["sei", "wäre", "war", "worden"]
+correct = 1

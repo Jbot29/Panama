@@ -1,0 +1,21 @@
+topic = "Zustandspassiv"
+
+[[questions]]
+question = "Welcher Satz beschreibt einen abgeschlossenen Zustand (Zustandspassiv)?"
+choices = ["Das Fenster wird geöffnet.", "Das Fenster ist geöffnet.", "Das Fenster wurde geöffnet.", "Das Fenster öffnet sich."]
+correct = 1
+
+[[questions]]
+question = "Welches Hilfsverb bildet das Zustandspassiv?"
+choices = ["werden", "haben", "sein", "lassen"]
+correct = 2
+
+[[questions]]
+question = "\"Nach der Reparatur _____ das Auto wieder fahrbereit.\" (Zustandspassiv)"
+choices = ["wird", "ist", "wurde", "worden ist"]
+correct = 1
+
+[[questions]]
+question = "Welcher Satz ist ein Zustandspassiv?"
+choices = ["Der Brief wird geschrieben.", "Der Brief ist geschrieben.", "Der Brief wurde geschrieben.", "Man schreibt den Brief."]
+correct = 1

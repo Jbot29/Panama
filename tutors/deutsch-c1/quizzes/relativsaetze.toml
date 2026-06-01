@@ -1,0 +1,21 @@
+topic = "Relativsätze"
+
+[[questions]]
+question = "\"Das ist der Mann, _____ Auto gestohlen wurde.\" (Genitiv)"
+choices = ["dessen", "dem", "den", "der"]
+correct = 0
+
+[[questions]]
+question = "\"Die Frau, _____ ich gestern gesprochen habe, ist Ärztin.\" (mit wem)"
+choices = ["die", "der", "mit der", "deren"]
+correct = 2
+
+[[questions]]
+question = "\"Das, _____ er sagt, stimmt nicht.\" (was – nach 'das')"
+choices = ["das", "was", "dem", "dessen"]
+correct = 1
+
+[[questions]]
+question = "\"Wer fleißig lernt, _____ besteht die Prüfung.\""
+choices = ["er", "der", "den", "diesem"]
+correct = 1

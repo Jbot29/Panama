@@ -1,0 +1,21 @@
+topic = "Modalpartikeln"
+
+[[questions]]
+question = "Was drückt \"ja\" als Modalpartikel aus?"
+choices = ["Eine Frage", "Erstaunen über etwas Offensichtliches", "Verneinung", "Einen Befehl"]
+correct = 1
+
+[[questions]]
+question = "\"Das ist _____ unglaublich!\" (Sprecher ist überrascht, findet es selbstverständlich)"
+choices = ["schon", "halt", "ja", "eigentlich"]
+correct = 2
+
+[[questions]]
+question = "\"Mach _____ die Tür zu!\" (Bitte abschwächen)"
+choices = ["ja", "mal", "schon", "halt"]
+correct = 1
+
+[[questions]]
+question = "\"Du hast _____ recht!\" (konzedieren, dass jemand recht hat)"
+choices = ["mal", "eben", "doch", "ja"]
+correct = 2

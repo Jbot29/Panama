@@ -1,0 +1,25 @@
+[package]
+name = "panama"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+eframe = { version = "0.33", features = ["wgpu"] }
+egui = { version = "0.33", features = ["serde"] }
+rusqlite = { version = "0.31", features = ["bundled"] } # bundles SQLite
+anyhow = "1"
+directories = "5"   # nice place to put your app data (db file)
+chrono = { version = "0.4", default-features = false, features = ["std", "clock"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rs-fsrs = { version = "1.2.1", features = ["serde"] }
+image = { version = "0.25", features = ["webp"] }
+rand = "0.8"
+walkdir = "2"
+imageproc = "0.25"
+rodio = { version = "0.20", features = ["symphonia-mp3"] }
+toml = "0.8"
+ureq = { version = "2", features = ["json"] }
+egui_commonmark = "0.22.0"
+resvg = "0.44"
+rfd = "0.15"

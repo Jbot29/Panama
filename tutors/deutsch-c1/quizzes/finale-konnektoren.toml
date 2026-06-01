@@ -1,0 +1,21 @@
+topic = "Finale Konnektoren"
+
+[[questions]]
+question = "Welches Wort drückt einen Zweck aus?"
+choices = ["weil", "obwohl", "damit", "da"]
+correct = 2
+
+[[questions]]
+question = "\"Er spart, _____ seine Kinder studieren können.\" (anderes Subjekt im Nebensatz)"
+choices = ["um ... zu", "damit", "weil", "da"]
+correct = 1
+
+[[questions]]
+question = "\"Sie lernt Deutsch, _____ in Deutschland arbeiten zu können.\""
+choices = ["damit", "weil", "um", "obwohl"]
+correct = 2
+
+[[questions]]
+question = "Wann verwendet man \"um...zu\" statt \"damit\"?"
+choices = ["Wenn die Subjekte verschieden sind", "Wenn das Subjekt in beiden Teilsätzen gleich ist", "Niemals", "Nur bei Modalverben"]
+correct = 1

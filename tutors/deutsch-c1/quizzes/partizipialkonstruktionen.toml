@@ -1,0 +1,21 @@
+topic = "Partizipialkonstruktionen"
+
+[[questions]]
+question = "Ersetze den Relativsatz: \"der Mann, der singt\""
+choices = ["der gesungene Mann", "der singende Mann", "der gesungen habende Mann", "der singt Mann"]
+correct = 1
+
+[[questions]]
+question = "Ersetze: \"das Haus, das gebaut wurde\""
+choices = ["das bauende Haus", "das gebaute Haus", "das bauendes Haus", "das zu bauende Haus"]
+correct = 1
+
+[[questions]]
+question = "\"Das _____ Experiment überraschte alle.\" (das Experiment, das erwartet wurde)"
+choices = ["erwartende", "erwartete", "erwartend", "erwarten"]
+correct = 1
+
+[[questions]]
+question = "Welcher Satz verwendet eine Partizipialkonstruktion?"
+choices = ["Der von vielen bewunderte Künstler stellte aus.", "Der Künstler, den viele bewunderten, stellte aus.", "Der Künstler stellte aus, weil viele ihn bewunderten.", "Der Künstler stellte aus."]
+correct = 0

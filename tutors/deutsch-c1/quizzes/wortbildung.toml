@@ -1,0 +1,21 @@
+topic = "Wortbildung"
+
+[[questions]]
+question = "Was bedeutet das Präfix \"zer-\" in Verben wie \"zerstören\", \"zerbrechen\"?"
+choices = ["Wiederholung", "Zerstörung oder Trennung", "Vollendung", "Umkehrung"]
+correct = 1
+
+[[questions]]
+question = "\"Die Schönheit\" ist mit welchem Suffix gebildet?"
+choices = ["-ung", "-keit", "-heit", "-schaft"]
+correct = 2
+
+[[questions]]
+question = "Was drückt das Präfix \"ver-\" oft aus?"
+choices = ["Nur Wiederholung", "Nur Vollendung", "Zustandsänderung, Entfernung oder Fehler", "Nur Verneinung"]
+correct = 2
+
+[[questions]]
+question = "Welches Wort ist korrekt gebildet?"
+choices = ["Freiheitkeit", "Freundlichheit", "Freundlichkeit", "Freundlichung"]
+correct = 2

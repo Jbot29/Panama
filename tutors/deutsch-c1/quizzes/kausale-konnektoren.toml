@@ -1,0 +1,21 @@
+topic = "Kausale Konnektoren"
+
+[[questions]]
+question = "Welches Wort drückt einen Grund aus?"
+choices = ["damit", "obwohl", "weil", "obgleich"]
+correct = 2
+
+[[questions]]
+question = "Was ist der grammatische Unterschied zwischen \"weil\" und \"denn\"?"
+choices = ["weil ist koordinierend, denn ist subordinierend", "denn ist koordinierend, weil ist subordinierend", "Beide sind koordinierend", "Beide sind subordinierend"]
+correct = 1
+
+[[questions]]
+question = "\"_____ sie müde war, ging sie früh schlafen.\" (kausaler Anschluss am Satzanfang)"
+choices = ["Damit", "Da", "Obwohl", "Wenn"]
+correct = 1
+
+[[questions]]
+question = "\"Das Konzert wurde abgesagt. _____ blieben wir zu Hause.\" (Folge)"
+choices = ["Obwohl", "Damit", "Deshalb", "Weil"]
+correct = 2

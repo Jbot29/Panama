@@ -1,0 +1,21 @@
+topic = "Wechselpräpositionen"
+
+[[questions]]
+question = "\"Ich lege das Buch _____ Tisch.\" (Bewegung/Richtung)"
+choices = ["auf dem", "auf den", "an dem", "an den"]
+correct = 1
+
+[[questions]]
+question = "\"Das Buch liegt _____ Tisch.\" (Position/Ort)"
+choices = ["auf dem", "auf den", "in den", "an den"]
+correct = 0
+
+[[questions]]
+question = "\"Er hängt das Bild _____ Wand.\" (Bewegung/Richtung)"
+choices = ["an der", "an die", "an dem", "auf der"]
+correct = 1
+
+[[questions]]
+question = "Welche Präposition ist eine Wechselpräposition (Dativ für Ort, Akkusativ für Richtung)?"
+choices = ["wegen", "mit", "auf", "von"]
+correct = 2

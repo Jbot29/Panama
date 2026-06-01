@@ -1,0 +1,21 @@
+topic = "Konjunktiv I"
+
+[[questions]]
+question = "Ergänze den Zeitungsbericht: \"Der Sprecher erklärte, die Lage _____ ernst.\""
+choices = ["ist", "sei", "wäre", "sein wird"]
+correct = 1
+
+[[questions]]
+question = "Für welchen Zweck wird Konjunktiv I hauptsächlich verwendet?"
+choices = ["Irreale Bedingungen", "Höfliche Bitten", "Indirekte Rede in formellen Texten", "Zukunftspläne"]
+correct = 2
+
+[[questions]]
+question = "\"Die Wissenschaftler berichteten, das Experiment _____ erfolgreich verlaufen.\""
+choices = ["ist", "wäre", "sei", "war"]
+correct = 2
+
+[[questions]]
+question = "Wenn Konjunktiv I und Indikativ Präsens identisch sind, verwendet man stattdessen:"
+choices = ["Präteritum", "Konjunktiv II", "Perfekt", "Futur I"]
+correct = 1

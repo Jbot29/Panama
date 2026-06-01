@@ -1,0 +1,20 @@
+# Rust build artifacts
+/target
+
+# Secrets — never commit
+.env
+.env.*
+
+# Local SQLite databases (user data)
+*.db
+*.db-shm
+*.db-wal
+
+# User media (images / audio)
+/media/
+
+# Local agent / editor config
+/.claude/
+
+# macOS cruft
+.DS_Store

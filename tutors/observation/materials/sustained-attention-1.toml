@@ -1,0 +1,66 @@
+# Material manifest — hand-authored ground truth for a Sustained Attention drill.
+# The tutor grades the learner's COVERAGE against this and steers toward
+# unmentioned regions. It must never name an element before the learner does.
+# v1: read-only. The image file rides along for the human to look at and for
+# future live-vision sessions; the app only injects the text below.
+
+image = "sustained-attention-1.png"
+title = "Automat"
+artist = "Edward Hopper"
+year = 1927
+caption = "A woman alone at a round table in an automat at night, one glove off, a cup before her."
+
+# Roughly ordered surface-first (what is physically present) → deductions last.
+# This is deliberately fuller than a quick look would produce: it is the bar the
+# learner is being pushed toward, the reason the tutor can say 'you missed the
+# entire X' with authority.
+manifest = """
+THE FIGURE
+- A single woman, seated, the only person in the scene. Young.
+- Cloche hat, tan/yellow, pulled low — brim cuts across the forehead, shadows the upper face.
+- Eyes downcast toward the cup, not out the window, not at the viewer. Expression flat, unreadable, not distressed — neutral.
+- Green coat with a dark fur-trimmed collar, worn ON (not hung) — she has not settled in to stay; transitional, like she just arrived or is about to leave.
+- Hands: the RIGHT hand is BARE and holds the cup; the LEFT hand still wears a dark glove. One glove off, one glove on — she has only half-undressed for the table.
+- Bare legs, knees together and angled, visible below the table edge — no stockings reading; skin against a cold-looking room.
+
+THE TABLE
+- Round table, pale stone/marble-look top, single central pedestal leg.
+- A small white coffee cup and saucer in front of her, the bare hand on/around it.
+- A footed glass compote dish of fruit (reddish — apples/oranges) sitting on the table behind the cup. Color anchor: the only warm saturated note besides the hat.
+
+THE ROOM / NEGATIVE SPACE
+- A large dark window/glass wall fills the upper-left two-thirds. It is nearly black.
+- In that black glass: TWO RECEDING ROWS of round ceiling lights, reflected, marching back in steep perspective to a vanishing point. These are a REFLECTION of the interior ceiling — not lights outside.
+- Crucially, the window shows NOTHING beyond — no street, no city, no figures, pure void. The 'outside' is absent. The blackness is the subject as much as she is.
+- A wooden door/frame at far left edge, with vertical molding; a brass/metal push-bar or kick-plate catches a little light.
+- A cast-iron RADIATOR low at the bottom-left, against the wall under the window — domestic heat in a public room; cold night implied.
+- A pale strip of baseboard / floor edge runs along the bottom; the floor is light, bare, cool.
+
+CHAIRS / COMPANY
+- An empty dark bentwood chair pulled to the near side of her table (foreground), back to us — the place across from her is vacant.
+- A second chair / chair-back at far right edge, partly cut off — golden/tan curved wood.
+- The framing crops the room tightly; we are close, almost at her table.
+
+LIGHT
+- Light is artificial, from above (the ceiling fixtures), falling on the hat, the right shoulder, the tabletop, her bare legs.
+- It is a pocket of warm-ish light in a large cold dark — she is lit, the void behind is not.
+- No daylight anywhere. Reinforced by radiator + coat-on + black glass: it is night, it is cold, the place is nearly closed/empty.
+
+DEDUCTIONS (must each point back to a named fact above)
+- Night, late, cold: black void window + radiator + coat worn + emptiness.
+- She is alone and the aloneness is structural, not incidental: empty facing chair, no other patrons, no world outside the glass.
+- Transient, not at rest: coat on, only one glove removed, hat still on — a pause, not a stay.
+- The reflected receding lights have no human counterpart below them — the perspective rushes back into nothing, amplifying isolation.
+"""
+
+# Where attention habitually closes early. The tutor sends the learner here when
+# they stall or declare themselves done.
+dead_zones = [
+  "the black window — most people read it as a wall or as 'windows'; few notice the lights are a REFLECTION and that nothing lies beyond",
+  "the radiator, bottom-left, under the window",
+  "the hands — that one glove is off and one is still on",
+  "the empty facing chair / the absence of any other person",
+  "the fruit compote dish on the table",
+  "the door frame and brass push-bar at the far left edge",
+  "her downcast gaze direction — at the cup, not out, not at us",
+]

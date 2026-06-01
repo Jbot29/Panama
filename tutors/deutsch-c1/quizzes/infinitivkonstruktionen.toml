@@ -1,0 +1,21 @@
+topic = "Infinitivkonstruktionen"
+
+[[questions]]
+question = "\"Er arbeitet hart, _____ Erfolg zu haben.\" (um einen Zweck auszudrücken)"
+choices = ["damit", "um", "ohne", "anstatt"]
+correct = 1
+
+[[questions]]
+question = "\"Sie ging nach Hause, _____ die Aufgaben zu machen.\" (ohne es zu tun)"
+choices = ["um", "damit", "ohne", "anstatt"]
+correct = 2
+
+[[questions]]
+question = "Welcher Satz ist grammatisch korrekt?"
+choices = ["Er spart Geld, um ein Auto zu kaufen.", "Er spart Geld, damit ein Auto zu kaufen.", "Er spart Geld, um ein Auto kaufen.", "Er spart Geld, damit er zu kaufen ein Auto."]
+correct = 0
+
+[[questions]]
+question = "Wann verwendet man \"damit\" statt \"um...zu\"?"
+choices = ["Wenn das Subjekt in beiden Teilsätzen gleich ist", "Wenn das Subjekt in beiden Teilsätzen verschieden ist", "Niemals", "Nur bei Modalverben"]
+correct = 1

@@ -1,0 +1,76 @@
+friendly_name = "Probability & Statistics"
+
+system_prompt = """
+You are a mathematics tutor helping a student master probability theory.
+Current topic: {node_name} — {node_description}
+
+Keep each response concise (2-4 sentences max). Ask exactly one question at a time. Use concrete numerical examples. Format using Markdown — **bold** for key terms, bullet lists for steps. For math, use Unicode symbols instead of LaTeX — never use dollar signs or $$...$$: multiplication ×, dot product ·, fractions written as P(A|B) = P(A∩B) / P(B), exponents as σ², subscripts as X_n, symbols ∑ ∫ √ ∞ ≤ ≥ ≈ ∈ ∩ ∪ π σ μ λ. When the student answers, give brief feedback (correct/incorrect and why) before your next question. Build intuition alongside formal definitions.
+
+If the student repeatedly struggles with a specific aspect of the current topic, suggest splitting it out as its own focus area using the exact command: `/flag "Subtopic Name" "brief description"` — so it can be tracked and scheduled separately. Only suggest this when a pattern of confusion is clear, not for a single wrong answer.
+
+When you suggest a flashcard, always format it as the exact command so the student can copy-paste it: `/new-card "front text" "back text"`
+"""
+
+[[nodes]]
+name = "Sample Space & Events"
+description = "Defining outcomes, events, and the sample space; set operations on events (union, intersection, complement)"
+
+[[nodes]]
+name = "Probability Axioms"
+description = "Kolmogorov axioms; probability as a measure; basic rules (addition rule, complement rule)"
+
+[[nodes]]
+name = "Counting & Combinatorics"
+description = "Permutations, combinations, multinomials; counting techniques for equally-likely outcomes"
+
+[[nodes]]
+name = "Conditional Probability"
+description = "P(A|B) = P(A∩B)/P(B); dependence vs. independence; multiplicative rule"
+
+[[nodes]]
+name = "Bayes' Theorem"
+description = "Updating beliefs with evidence; law of total probability; prior and posterior"
+
+[[nodes]]
+name = "Independence"
+description = "Pairwise vs. mutual independence; independent trials; product rule for independent events"
+
+[[nodes]]
+name = "Random Variables"
+description = "Discrete and continuous RVs; probability mass function; cumulative distribution function"
+
+[[nodes]]
+name = "Expected Value"
+description = "E[X] for discrete and continuous RVs; linearity of expectation; E[g(X)]"
+
+[[nodes]]
+name = "Variance & Std Deviation"
+description = "Var(X) = E[X²] - (E[X])²; standard deviation; properties under scaling and shifting"
+
+[[nodes]]
+name = "Binomial Distribution"
+description = "B(n,p): successes in n independent Bernoulli trials; PMF, mean np, variance np(1-p)"
+
+[[nodes]]
+name = "Poisson Distribution"
+description = "Modeling rare events; PMF e^{-λ}λ^k/k!; mean and variance both λ; Poisson limit of Binomial"
+
+[[nodes]]
+name = "Normal Distribution"
+description = "Bell curve; PDF, mean μ, variance σ²; standard normal Z; 68-95-99.7 rule"
+
+[[nodes]]
+name = "Continuous Distributions"
+description = "Uniform, exponential; PDF vs PMF; computing probabilities as integrals"
+
+[[nodes]]
+name = "Law of Large Numbers"
+description = "Sample mean converges to E[X]; weak vs. strong LLN; intuition and misinterpretations"
+
+[[nodes]]
+name = "Central Limit Theorem"
+description = "Sum of i.i.d. RVs approaches normal; standardization; CLT in practice and approximations"
+
+[[nodes]]
+name = "Ordinary Differential Equations (ODEs)"
+description = "ODEs model how a quantity changes over time; dy/dt = f(y,t); separable equations, first-order linear ODEs, exponential growth/decay; applied to biology: cell division modeled as dN/dt = rN with solution N(t) = N₀eʳᵗ; logistic growth dN/dt = rN(1 - N/K)"

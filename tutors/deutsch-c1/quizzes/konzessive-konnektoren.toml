@@ -1,0 +1,21 @@
+topic = "Konzessive Konnektoren"
+
+[[questions]]
+question = "Welches Wort leitet einen konzessiven Nebensatz ein?"
+choices = ["weil", "damit", "obwohl", "wenn"]
+correct = 2
+
+[[questions]]
+question = "\"Er hat bestanden, _____ er kaum gelernt hat.\""
+choices = ["weil", "obwohl", "damit", "da"]
+correct = 1
+
+[[questions]]
+question = "\"Er war krank. _____ ging er zur Arbeit.\" (trotzdem)"
+choices = ["Deshalb", "Trotzdem", "Deswegen", "Daher"]
+correct = 1
+
+[[questions]]
+question = "\"Wenngleich\" und \"obgleich\" sind Synonyme von:"
+choices = ["weil", "damit", "obwohl", "als ob"]
+correct = 2

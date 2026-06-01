@@ -1,0 +1,21 @@
+topic = "Nominalstil"
+
+[[questions]]
+question = "Was kennzeichnet den Nominalstil?"
+choices = ["Viele Verben, wenige Substantive", "Nominalisierte Verben und abstrakte Substantive", "Einfache Satzstruktur", "Umgangssprachliche Ausdrücke"]
+correct = 1
+
+[[questions]]
+question = "Welcher Satz ist ein Beispiel für Nominalstil?"
+choices = ["Er analysierte den Markt gründlich.", "Die gründliche Analyse des Marktes erfolgte.", "Er hat den Markt analysiert.", "Der Markt wurde analysiert."]
+correct = 1
+
+[[questions]]
+question = "Ersetze durch Nominalstil: \"Weil er krank ist, fehlt er.\""
+choices = ["Aufgrund seiner Krankheit fehlt er.", "Weil er krank ist, fehlt er trotzdem.", "Da er krank ist, kommt er nicht.", "Er fehlt, denn er ist krank."]
+correct = 0
+
+[[questions]]
+question = "\"Die Durchführung der Reform\" ist ein Beispiel für:"
+choices = ["Verbalstil", "Nominalstil", "Konjunktiv II", "Partizipialkonstruktion"]
+correct = 1

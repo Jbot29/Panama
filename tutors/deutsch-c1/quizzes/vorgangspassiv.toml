@@ -1,0 +1,21 @@
+topic = "Vorgangspassiv"
+
+[[questions]]
+question = "Bilde das Vorgangspassiv: \"Man baut das Haus.\""
+choices = ["Das Haus ist gebaut.", "Das Haus wird gebaut.", "Das Haus wurde gebaut sein.", "Das Haus hat gebaut."]
+correct = 1
+
+[[questions]]
+question = "Welches Hilfsverb wird für das Vorgangspassiv verwendet?"
+choices = ["sein", "haben", "werden", "lassen"]
+correct = 2
+
+[[questions]]
+question = "\"Das Paket _____ gestern geliefert.\" (Präteritum Passiv)"
+choices = ["ist", "wird", "wurde", "war"]
+correct = 2
+
+[[questions]]
+question = "Welcher Satz ist ein Vorgangspassiv im Perfekt?"
+choices = ["Das Buch ist gelesen.", "Das Buch wurde gelesen.", "Das Buch ist gelesen worden.", "Das Buch hat gelesen."]
+correct = 2

@@ -1,0 +1,61 @@
+friendly_name = "Art & Visual Mastery"
+
+system_prompt = """
+You're a Socratic tutor helping a photographer deepen their art knowledge through {node_name}: {node_description}. Ask exactly one clarifying or exploratory question to activate prior knowledge and encourage discovery. Give brief, encouraging feedback (1-2 sentences) that validates their thinking. Use Markdown, Unicode symbols (not LaTeX). When relevant, suggest /new-card "front" "back" for visual concepts worth remembering, or /flag "subtopic" "description" if they struggle repeatedly with one concept. Keep responses concise and conversational.
+"""
+
+[[nodes]]
+name = "Color Theory Fundamentals"
+description = "Understanding the color wheel, primary/secondary/tertiary colors, and how colors interact. Essential foundation for both painting and photography composition."
+
+[[nodes]]
+name = "Harmony & Color Relationships"
+description = "Exploring complementary, analogous, triadic, and split-complementary color schemes. How to create visual balance and mood through deliberate color choices."
+
+[[nodes]]
+name = "Value & Contrast"
+description = "The relationship between light and dark, and how value creates form, depth, and visual hierarchy independent of color."
+
+[[nodes]]
+name = "Composition Principles"
+description = "Rule of thirds, leading lines, focal points, balance, and movement. Universal principles that apply across photography, painting, and drawing."
+
+[[nodes]]
+name = "Dutch Golden Age Painting"
+description = "Studying Vermeer, Rembrandt, and contemporaries: their use of light, composition, symbolism, and emotional intimacy that makes their work timeless."
+
+[[nodes]]
+name = "Light & Shadow Mastery"
+description = "How light models form, creates atmosphere, and tells stories. Chiaroscuro techniques and their application to photography and painting."
+
+[[nodes]]
+name = "Drawing Fundamentals"
+description = "Basic skills including perspective, proportion, gesture, and line quality. Building visual literacy and hand-eye coordination for both painting and photography."
+
+[[nodes]]
+name = "Human Anatomy & Portraiture"
+description = "Understanding bone structure, musculature, and facial proportions. Essential for capturing authentic expressions and poses in both drawing and photography."
+
+[[nodes]]
+name = "Perspective & Spatial Depth"
+description = "Linear perspective, atmospheric perspective, and spatial relationships. Creating convincing three-dimensional space on a two-dimensional surface."
+
+[[nodes]]
+name = "Painting Media & Techniques"
+description = "Oil, acrylic, and watercolor properties, glazing, impasto, and layering. Understanding material behavior to achieve desired visual effects."
+
+[[nodes]]
+name = "Artistic Movements & Influences"
+description = "Renaissance, Baroque, Impressionism, and contemporary movements. Identifying visual patterns and 'stealing' ideas ethically from art history."
+
+[[nodes]]
+name = "Emotional Storytelling"
+description = "Using composition, color, gesture, and symbolism to convey narrative and evoke feeling. Making images resonate beyond technical execution."
+
+[[nodes]]
+name = "Texture & Surface Quality"
+description = "Creating visual and tactile texture through brushwork, layering, and surface manipulation. Adding dimension and sensory interest to images."
+
+[[nodes]]
+name = "Critique & Visual Analysis"
+description = "Developing a critical eye to deconstruct what makes masterworks effective. Language for discussing and learning from both historic and contemporary art."

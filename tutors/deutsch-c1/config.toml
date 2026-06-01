@@ -1,0 +1,87 @@
+friendly_name = "Deutsch C1"
+
+system_prompt = """
+You are a German language tutor helping a student prepare for the Goethe C1 exam.
+Current topic: {node_name} — {node_description}
+
+Keep each response concise (2-4 sentences max). Ask exactly one question at a time. Use real German example sentences. When the student answers, give brief feedback (correct/incorrect and why) before your next question. Format using Markdown — use **bold** for key terms and bullet lists for examples. Respond in a mix of German and English — German for examples, English for explanations.
+
+If the student repeatedly struggles with a specific aspect of the current topic, suggest splitting it out as its own focus area using the exact command: `/flag "Subtopic Name" "brief description"` — so it can be tracked and scheduled separately. Only suggest this when a pattern of confusion is clear, not for a single wrong answer.
+
+When you suggest a flashcard, always format it as the exact command so the student can copy-paste it: `/new-card "front text" "back text"`
+"""
+
+[[nodes]]
+name = "Konjunktiv II"
+description = "Hypothetische Aussagen, irreale Bedingungen und höfliche Bitten (würde, hätte, wäre)"
+quiz_file = "konjunktiv-ii"
+
+[[nodes]]
+name = "Konjunktiv I"
+description = "Indirekte Rede in formellen Texten und Nachrichtenberichten"
+quiz_file = "konjunktiv-i"
+
+[[nodes]]
+name = "Vorgangspassiv"
+description = "Aktive Handlungen passivisch ausdrücken: Das Haus wird gebaut"
+quiz_file = "vorgangspassiv"
+
+[[nodes]]
+name = "Zustandspassiv"
+description = "Abgeschlossene Zustände passivisch: Das Haus ist gebaut (sein + Partizip II)"
+quiz_file = "zustandspassiv"
+
+[[nodes]]
+name = "Partizipialkonstruktionen"
+description = "Partizipialphrasen als Ersatz für Relativsätze"
+quiz_file = "partizipialkonstruktionen"
+
+[[nodes]]
+name = "Infinitivkonstruktionen"
+description = "um...zu, ohne...zu, anstatt...zu Konstruktionen"
+quiz_file = "infinitivkonstruktionen"
+
+[[nodes]]
+name = "Wechselpräpositionen"
+description = "Dativ vs. Akkusativ mit an, auf, hinter, in, neben, über, unter, vor, zwischen"
+quiz_file = "wechselpraepositionen"
+
+[[nodes]]
+name = "Genitivpräpositionen"
+description = "Präpositionen mit Genitiv: wegen, trotz, während, aufgrund, angesichts"
+quiz_file = "genitivpraepositionen"
+
+[[nodes]]
+name = "Modalpartikeln"
+description = "Bedeutungsnuancen mit ja, doch, mal, eigentlich, eben, halt, schon"
+quiz_file = "modalpartikeln"
+
+[[nodes]]
+name = "Konzessive Konnektoren"
+description = "Gegensätze ausdrücken: obwohl, obgleich, wenngleich, trotzdem, dennoch"
+quiz_file = "konzessive-konnektoren"
+
+[[nodes]]
+name = "Kausale Konnektoren"
+description = "Gründe angeben: weil, da, denn, weshalb, daher, deshalb"
+quiz_file = "kausale-konnektoren"
+
+[[nodes]]
+name = "Finale Konnektoren"
+description = "Zweck ausdrücken: damit, um...zu, zum Zweck, mit dem Ziel"
+quiz_file = "finale-konnektoren"
+
+[[nodes]]
+name = "Nominalstil"
+description = "Nominalisierungen vs. Verbalstil in formellen Texten"
+quiz_file = "nominalstil"
+
+[[nodes]]
+name = "Relativsätze"
+description = "Relativpronomen mit Genitiv, Präpositionen und dem, was, wer"
+quiz_file = "relativsaetze"
+
+[[nodes]]
+name = "Wortbildung"
+description = "Präfixe (ver-, zer-, ent-), Suffixe (-ung, -heit, -keit) und Komposita"
+quiz_file = "wortbildung"
