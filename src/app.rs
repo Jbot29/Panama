@@ -1101,8 +1101,12 @@ impl MyApp {
                     Each card should be self-contained. Format each as the exact command so it can be copy-pasted: \
                     `/new-card \"front text\" \"back text\"`"
             }));
+            let system = config
+                .system_prompt
+                .replace("{node_name}", &node.name)
+                .replace("{node_description}", &node.description);
             let (tx, rx) = std::sync::mpsc::channel();
-            crate::tutor::ask_claude(node, config.system_prompt, api_messages, tx);
+            crate::tutor::ask_claude_raw(system, api_messages, 2048, tx);
             self.tutor_rx = Some(rx);
             self.tutor_state = crate::tutor::TutorState::Loading;
             return;
