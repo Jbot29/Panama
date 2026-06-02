@@ -45,6 +45,11 @@ pub fn ui_tutor_detail(app: &mut MyApp, ui: &mut egui::Ui) {
                 app.init_tutor_session();
                 app.view = View::TutorSession;
             }
+            if ui.button(RichText::new("☕ Office Hours").size(15.0)).clicked() {
+                app.tutor_state = TutorState::Idle;
+                app.init_office_hours();
+                app.view = View::TutorSession;
+            }
             if ui.button("Refresh").clicked() {
                 app.load_tutor_detail();
             }

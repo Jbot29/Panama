@@ -83,6 +83,9 @@ pub struct MyApp {
     pub tutor_detail_new_node_name: String,
     pub tutor_detail_new_node_desc: String,
     pub tutor_pinned_node_id: Option<i64>,
+    // When Some, the active session is an "office hours" chat (no node, free-form
+    // diagnostic conversation) and this holds its system prompt.
+    pub tutor_office_hours_prompt: Option<String>,
     // Create tutor flow
     pub create_tutor_subject: String,
     pub create_tutor_context: String,
@@ -169,6 +172,7 @@ impl MyApp {
             tutor_detail_new_node_name: String::new(),
             tutor_detail_new_node_desc: String::new(),
             tutor_pinned_node_id: None,
+            tutor_office_hours_prompt: None,
             card_chat_messages: Vec::new(),
             card_chat_input: String::new(),
             card_chat_loading: false,
@@ -802,10 +806,74 @@ impl MyApp {
         Ok(id)
     }
 
+    /// Start an "office hours" session: a free-form, no-objective conversation
+    /// where the tutor chats like a grad student, probes gently for gaps, and
+    /// recommends flagging them. It is pull, not push — only ever launched by an
+    /// explicit button, never auto-served by node selection. The system prompt is
+    /// built from the tutor's subject plus a live snapshot of node mastery.
+    pub fn init_office_hours(&mut self) {
+        if self.tutor_state == crate::tutor::TutorState::Loading {
+            return;
+        }
+        let Some(slug) = self.active_tutor_slug.clone() else { return };
+        let Some(config) = self.active_tutor_config.clone() else { return };
+        let conn = self.conn.as_ref().expect("DB not connected");
+        let nodes = crate::tutor::load_tutor_nodes(conn, &slug).unwrap_or_default();
+
+        // Snapshot of where the learner stands, struggling topics first.
+        let mut state = String::new();
+        if nodes.is_empty() {
+            state.push_str("They haven't tracked any specific topics yet.");
+        } else {
+            let mut sorted = nodes.clone();
+            sorted.sort_by(|a, b| {
+                a.mastery_score
+                    .partial_cmp(&b.mastery_score)
+                    .unwrap_or(std::cmp::Ordering::Equal)
+            });
+            state.push_str("Where they currently stand (mastery 0–100%):\n");
+            for n in &sorted {
+                let tag = if n.mastery_score < 0.6 { "STRUGGLING" } else { "solid" };
+                state.push_str(&format!(
+                    "- {tag}: {} ({:.0}%)\n",
+                    n.name,
+                    n.mastery_score * 100.0
+                ));
+            }
+        }
+
+        let system = format!(
+            "You are an approachable tutor holding informal office hours for a learner studying \"{subject}\".\n\n\
+             {state}\n\n\
+             This is NOT a structured lesson or a quiz. Talk to them the way a friendly grad student would at \
+             office hours: relaxed, conversational, curious. Open by asking how it's going, then follow their \
+             interests and just discuss. As you talk, probe gently where they seem shaky — but keep it natural, \
+             never an interrogation. When you spot a concrete gap worth tracking, suggest they flag it with a \
+             copy-pasteable command on its own line: `/flag \"topic name\" \"short description\"`. Recommend \
+             resources, next steps, or things to try. Keep replies fairly short and human. Use Markdown and \
+             Unicode math; never LaTeX.",
+            subject = config.friendly_name,
+            state = state,
+        );
+
+        self.tutor_office_hours_prompt = Some(system.clone());
+        self.tutor_current_node = None;
+        self.tutor_pinned_node_id = None;
+        self.tutor_messages.clear();
+
+        let kickoff = vec![serde_json::json!({"role": "user", "content": "Start"})];
+        let (tx, rx) = std::sync::mpsc::channel();
+        crate::tutor::ask_claude_raw(system, kickoff, 1024, tx);
+        self.tutor_rx = Some(rx);
+        self.tutor_state = crate::tutor::TutorState::Loading;
+    }
+
     pub fn init_tutor_session(&mut self) {
         if self.tutor_state == crate::tutor::TutorState::Loading {
             return;
         }
+        // A normal node session is never office hours.
+        self.tutor_office_hours_prompt = None;
         let Some(slug) = self.active_tutor_slug.clone() else { return };
         let Some(config) = self.active_tutor_config.clone() else { return };
         let conn = self.conn.as_ref().expect("DB not connected");
@@ -1113,7 +1181,16 @@ impl MyApp {
                 role: "user".into(),
                 content: input,
             });
-            let Some(node) = self.tutor_current_node.clone() else { return };
+            // System prompt: office-hours override if active, else node-derived.
+            let system = if let Some(oh) = self.tutor_office_hours_prompt.clone() {
+                oh
+            } else {
+                let Some(node) = self.tutor_current_node.clone() else { return };
+                config
+                    .system_prompt
+                    .replace("{node_name}", &node.name)
+                    .replace("{node_description}", &node.description)
+            };
             let mut api_messages = vec![serde_json::json!({"role": "user", "content": "Start"})];
             let msg_count = self.tutor_messages.len();
             for m in self.tutor_messages.iter().take(msg_count - 1) {
@@ -1134,10 +1211,6 @@ impl MyApp {
                     Each card should be self-contained. Format each as the exact command so it can be copy-pasted: \
                     `/new-card \"front text\" \"back text\"`"
             }));
-            let system = config
-                .system_prompt
-                .replace("{node_name}", &node.name)
-                .replace("{node_description}", &node.description);
             let (tx, rx) = std::sync::mpsc::channel();
             crate::tutor::ask_claude_raw(system, api_messages, 2048, tx);
             self.tutor_rx = Some(rx);
@@ -1162,8 +1235,6 @@ impl MyApp {
             content: input,
         });
 
-        let Some(node) = self.tutor_current_node.clone() else { return };
-
         let mut api_messages = vec![serde_json::json!({"role": "user", "content": "Start"})];
         for m in &self.tutor_messages {
             if m.role != "system" {
@@ -1172,7 +1243,12 @@ impl MyApp {
         }
 
         let (tx, rx) = std::sync::mpsc::channel();
-        crate::tutor::ask_claude(node, config.system_prompt, api_messages, tx);
+        if let Some(oh) = self.tutor_office_hours_prompt.clone() {
+            crate::tutor::ask_claude_raw(oh, api_messages, 1024, tx);
+        } else {
+            let Some(node) = self.tutor_current_node.clone() else { return };
+            crate::tutor::ask_claude(node, config.system_prompt, api_messages, tx);
+        }
         self.tutor_rx = Some(rx);
         self.tutor_state = crate::tutor::TutorState::Loading;
     }

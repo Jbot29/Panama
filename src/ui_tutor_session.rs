@@ -12,9 +12,11 @@ pub fn ui_tutor_session(app: &mut MyApp, ui: &mut egui::Ui) {
     // ── top bar ──────────────────────────────────────────────
     ui.horizontal(|ui| {
         if ui.button("< Tutors").clicked() {
+            app.tutor_office_hours_prompt = None;
             app.load_available_tutors();
             app.view = View::Tutors;
         }
+        let office_hours = app.tutor_office_hours_prompt.is_some();
         if let Some(node) = &app.tutor_current_node {
             let mastery_pct = (node.mastery_score * 100.0).round() as u32;
             ui.label(
@@ -22,23 +24,38 @@ pub fn ui_tutor_session(app: &mut MyApp, ui: &mut egui::Ui) {
                     .size(16.0)
                     .color(Color32::from_rgb(180, 200, 255)),
             );
+        } else if office_hours {
+            ui.label(
+                RichText::new("☕ Office Hours")
+                    .size(16.0)
+                    .color(Color32::from_rgb(210, 190, 140)),
+            );
         } else {
             ui.label("Picking topic...");
         }
         ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
-            if ui.button("Next topic").clicked() {
-                app.load_available_tutors();
-                app.view = View::Tutors;
-            }
-            if ui.button("Still struggling").clicked() {
-                app.tutor_rate(-0.1);
-                app.load_available_tutors();
-                app.view = View::Tutors;
-            }
-            if ui.button("Got it").clicked() {
-                app.tutor_rate(0.15);
-                app.load_available_tutors();
-                app.view = View::Tutors;
+            if office_hours {
+                // No mastery rating in office hours — it isn't a graded node.
+                if ui.button("Done").clicked() {
+                    app.tutor_office_hours_prompt = None;
+                    app.load_available_tutors();
+                    app.view = View::Tutors;
+                }
+            } else {
+                if ui.button("Next topic").clicked() {
+                    app.load_available_tutors();
+                    app.view = View::Tutors;
+                }
+                if ui.button("Still struggling").clicked() {
+                    app.tutor_rate(-0.1);
+                    app.load_available_tutors();
+                    app.view = View::Tutors;
+                }
+                if ui.button("Got it").clicked() {
+                    app.tutor_rate(0.15);
+                    app.load_available_tutors();
+                    app.view = View::Tutors;
+                }
             }
         });
     });
