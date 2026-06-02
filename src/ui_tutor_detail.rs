@@ -63,6 +63,32 @@ pub fn ui_tutor_detail(app: &mut MyApp, ui: &mut egui::Ui) {
         );
         ui.add_space(4.0);
 
+        // ── Add a new top-level topic ────────────────────────
+        ui.add(
+            egui::TextEdit::singleline(&mut app.tutor_detail_new_node_name)
+                .desired_width(f32::INFINITY)
+                .hint_text("new topic name"),
+        );
+        ui.add(
+            egui::TextEdit::singleline(&mut app.tutor_detail_new_node_desc)
+                .desired_width(f32::INFINITY)
+                .hint_text("optional description"),
+        );
+        if ui.button("+ Add Topic").clicked() {
+            let name = app.tutor_detail_new_node_name.trim().to_string();
+            let desc = app.tutor_detail_new_node_desc.trim().to_string();
+            if !name.is_empty() {
+                if let Ok(id) = app.add_tutor_node(&name, &desc) {
+                    app.tutor_detail_new_node_name.clear();
+                    app.tutor_detail_new_node_desc.clear();
+                    app.select_detail_node(id);
+                }
+            }
+        }
+        ui.add_space(6.0);
+        ui.separator();
+        ui.add_space(4.0);
+
         ScrollArea::vertical()
             .id_salt("detail_node_list")
             .auto_shrink([false, false])

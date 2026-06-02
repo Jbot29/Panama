@@ -80,6 +80,8 @@ pub struct MyApp {
     pub tutor_detail_selected: Option<i64>,
     pub tutor_detail_prereqs: Vec<crate::tutor::TutorNode>,
     pub tutor_detail_prereq_input: String,
+    pub tutor_detail_new_node_name: String,
+    pub tutor_detail_new_node_desc: String,
     pub tutor_pinned_node_id: Option<i64>,
     // Create tutor flow
     pub create_tutor_subject: String,
@@ -164,6 +166,8 @@ impl MyApp {
             tutor_detail_selected: None,
             tutor_detail_prereqs: Vec::new(),
             tutor_detail_prereq_input: String::new(),
+            tutor_detail_new_node_name: String::new(),
+            tutor_detail_new_node_desc: String::new(),
             tutor_pinned_node_id: None,
             card_chat_messages: Vec::new(),
             card_chat_input: String::new(),
@@ -767,6 +771,35 @@ impl MyApp {
         self.tutor_detail_prereq_input.clear();
         let conn = self.conn.as_ref().expect("DB not connected");
         self.tutor_detail_prereqs = crate::tutor::get_node_prereqs(conn, node_id).unwrap_or_default();
+    }
+
+    /// Add a new top-level topic node for the active tutor and refresh the
+    /// detail list. Unlike `/flag` (which seeds at 0.3 to surface quickly),
+    /// this is a normal new topic at the table-default mastery. Returns the
+    /// new node's id, or the existing id if a node with that name already exists.
+    pub fn add_tutor_node(&mut self, name: &str, desc: &str) -> Result<i64, String> {
+        let name = name.trim();
+        if name.is_empty() {
+            return Err("Topic name is required".into());
+        }
+        let slug = self.active_tutor_slug.clone().unwrap_or_default();
+        let now = chrono::Utc::now().timestamp();
+        let conn = self.conn.as_ref().expect("DB not connected");
+        conn.execute(
+            "INSERT OR IGNORE INTO nodes (tutor_slug, name, description, created_at) \
+             VALUES (?1, ?2, ?3, ?4)",
+            rusqlite::params![slug, name, desc.trim(), now],
+        )
+        .map_err(|e| e.to_string())?;
+        let id: i64 = conn
+            .query_row(
+                "SELECT id FROM nodes WHERE tutor_slug = ?1 AND name = ?2",
+                rusqlite::params![slug, name],
+                |row| row.get(0),
+            )
+            .map_err(|e| e.to_string())?;
+        self.tutor_detail_nodes = crate::tutor::load_tutor_nodes(conn, &slug).unwrap_or_default();
+        Ok(id)
     }
 
     pub fn init_tutor_session(&mut self) {
