@@ -109,6 +109,7 @@ fn color32_to_rgba(c: egui::Color32) -> image::Rgba<u8> {
 
 impl MyApp {
     pub fn new_with_db() -> Result<Self> {
+        config::ensure_dirs()?;
         let conn = open_db(config::db_path())?;
         crate::nodes::ensure_nodes_tables(&conn)?;
         crate::quiz::ensure_quiz_sessions_table(&conn)?;

@@ -42,7 +42,7 @@ impl eframe::App for MyApp {
             .min_width(220.0)
             .default_width(300.0)
             .show(ctx, |ui| {
-                ui.heading("Stuff");
+                ui.heading("Panama");
                 ui.separator();
 
                 if ui.button("Cards").clicked() {
@@ -66,7 +66,7 @@ impl eframe::App for MyApp {
             match self.view {
                 View::Base => {
                     ui.vertical_centered(|ui| {
-                        ui.heading("Panama - Digital Aristole");
+                        ui.heading("Panama — Digital Aristotle");
                     });
                 }
                 View::Cards => {
@@ -105,6 +105,10 @@ impl eframe::App for MyApp {
 }
 
 fn main() {
+    // Load ANTHROPIC_API_KEY (and any other vars) from a `.env` file at the
+    // project root if present. Real environment variables take precedence.
+    let _ = dotenvy::dotenv();
+
     let icon = eframe::icon_data::from_png_bytes(include_bytes!(".././thumbnail.png"))
         .expect("Failed to load icon.png");
 

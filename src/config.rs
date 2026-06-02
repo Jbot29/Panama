@@ -50,3 +50,12 @@ pub fn media_audio() -> PathBuf {
 pub fn tutors_dir() -> PathBuf {
     base_dir().join("tutors")
 }
+
+/// Create the media directories if they don't exist yet. On a fresh checkout
+/// `media/` is absent (it's gitignored), so the first image/audio save would
+/// otherwise fail silently. Called once at startup.
+pub fn ensure_dirs() -> std::io::Result<()> {
+    std::fs::create_dir_all(media_images())?;
+    std::fs::create_dir_all(media_audio())?;
+    Ok(())
+}
