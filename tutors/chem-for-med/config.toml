@@ -1,0 +1,67 @@
+friendly_name = "Chem for Med"
+
+system_prompt = """
+You are a Socratic chemistry tutor guiding a learner whose goal is to understand chemistry for biology and medicine. You are currently teaching: **{node_name}** — {node_description}
+
+Ask exactly **one question at a time** and wait for the learner's response. Give brief, encouraging feedback (2-4 sentences total) before moving on. Use Markdown for clarity and Unicode math/chemistry symbols (→, ⇌, ⁺, ⁻, Δ, ≈, ₂, ₃, °C), never LaTeX. Whenever possible, connect concepts to biology or medicine (e.g. enzymes, blood pH, drug binding). When a useful fact emerges, suggest a flashcard as /new-card "front" "back". If the learner repeatedly struggles with one idea, suggest /flag "subtopic" "description". Keep every response concise.
+"""
+
+[[nodes]]
+name = "Atoms & Elements"
+description = "Structure of atoms, protons, neutrons, electrons, and how the periodic table organizes elements essential to life like C, H, O, N, P, S."
+
+[[nodes]]
+name = "Electrons & Bonding Basics"
+description = "Electron shells, valence electrons, and why atoms form bonds, focusing on the elements that build biological molecules."
+
+[[nodes]]
+name = "Chemical Bonds"
+description = "Ionic, covalent, polar covalent, and hydrogen bonds, and how bond type determines molecular behavior in cells."
+
+[[nodes]]
+name = "Water & Its Properties"
+description = "Polarity, hydrogen bonding, cohesion, and why water is the solvent of life and biological reactions."
+
+[[nodes]]
+name = "Moles & Concentration"
+description = "The mole concept, molarity, and how concentrations describe substances in blood, tissues, and lab solutions."
+
+[[nodes]]
+name = "Acids, Bases & pH"
+description = "Defining acids and bases, the pH scale, and buffers that maintain stable pH in blood and cells."
+
+[[nodes]]
+name = "Chemical Reactions & Energy"
+description = "Reaction types, exothermic vs endothermic processes, and the energetics of metabolism."
+
+[[nodes]]
+name = "Reaction Rates & Equilibrium"
+description = "Kinetics, activation energy, dynamic equilibrium (⇌), and Le Châtelier's principle in physiological systems."
+
+[[nodes]]
+name = "Enzymes & Catalysis"
+description = "How catalysts lower activation energy and how enzymes accelerate biological reactions with specificity."
+
+[[nodes]]
+name = "Organic Chemistry Foundations"
+description = "Carbon's bonding versatility, functional groups, and isomers that define organic and biological molecules."
+
+[[nodes]]
+name = "Functional Groups in Biology"
+description = "Hydroxyl, carboxyl, amino, phosphate and other groups, and how they confer chemical properties to biomolecules."
+
+[[nodes]]
+name = "Biomolecules"
+description = "Structure and chemistry of carbohydrates, lipids, proteins, and nucleic acids as polymers of small units."
+
+[[nodes]]
+name = "Thermodynamics of Life"
+description = "Free energy (ΔG), spontaneity, and coupled reactions like ATP-driven processes that power cells."
+
+[[nodes]]
+name = "Redox & Electron Transfer"
+description = "Oxidation, reduction, electron carriers (NAD⁺/NADH), and their central role in cellular respiration."
+
+[[nodes]]
+name = "Chemistry of Drugs & Receptors"
+description = "Molecular interactions, binding affinity, and how chemical structure influences drug action and pharmacology."
