@@ -1,0 +1,301 @@
+topic = "Dativpräpositionen"
+
+[[questions]]
+question = "Sie kommt gerade _____ dem Haus."
+choices = ["aus", "außer", "bei", "beim"]
+correct = 0
+explanation = "aus (+Dativ): out of (a location) / from (with place names)."
+
+[[questions]]
+question = "Herr Schmidt kommt _____ Berlin."
+choices = ["mit", "aus", "nach", "seit"]
+correct = 1
+explanation = "aus (+Dativ): out of (a location) / from (with place names)."
+
+[[questions]]
+question = "Das Paket kam _____ Deutschland."
+choices = ["von", "vom", "aus", "zu"]
+correct = 2
+explanation = "aus (+Dativ): out of (a location) / from (with place names)."
+
+[[questions]]
+question = "Heute habe ich einen Brief _____ Hamburg bekommen."
+choices = ["zum", "zur", "gegenüber", "aus"]
+correct = 3
+explanation = "aus (+Dativ): out of (a location) / from (with place names)."
+
+[[questions]]
+question = "_____ ihm kenne ich niemanden in Hamburg."
+choices = ["Außer", "Aus", "Bei", "Beim"]
+correct = 0
+explanation = "außer (+Dativ): except for, besides, apart from."
+
+[[questions]]
+question = "_____ ihm kenne ich viele Leute in Hamburg."
+choices = ["Mit", "Außer", "Nach", "Seit"]
+correct = 1
+explanation = "außer (+Dativ): except for, besides, apart from."
+
+[[questions]]
+question = "Er ist _____ Atem."
+choices = ["von", "vom", "außer", "zu"]
+correct = 2
+explanation = "außer (+Dativ): except for, besides, apart from."
+
+[[questions]]
+question = "Der Geldautomat ist _____ Betrieb."
+choices = ["zum", "zur", "gegenüber", "außer"]
+correct = 3
+explanation = "außer (+Dativ): except for, besides, apart from."
+
+[[questions]]
+question = "Sie war _____ sich."
+choices = ["außer", "aus", "bei", "beim"]
+correct = 0
+explanation = "außer (+Dativ): except for, besides, apart from."
+
+[[questions]]
+question = "Er wohnt _____ seinem Bruder."
+choices = ["mit", "bei", "nach", "seit"]
+correct = 1
+explanation = "bei (+Dativ): at someone's place / at a business / near / while doing something. bei + dem = beim."
+
+[[questions]]
+question = "Er wohnt _____ seinen Eltern."
+choices = ["von", "vom", "bei", "zu"]
+correct = 2
+explanation = "bei (+Dativ): at someone's place / at a business / near / while doing something. bei + dem = beim."
+
+[[questions]]
+question = "Um drei bin ich _____ Arzt."
+choices = ["zum", "zur", "gegenüber", "beim"]
+correct = 3
+explanation = "bei (+Dativ): at someone's place / at a business / near / while doing something. bei + dem = beim."
+
+[[questions]]
+question = "Er ist jetzt _____ Friseur."
+choices = ["beim", "aus", "außer", "bei"]
+correct = 0
+explanation = "bei (+Dativ): at someone's place / at a business / near / while doing something. bei + dem = beim."
+
+[[questions]]
+question = "Er ist jetzt _____ der Arbeit."
+choices = ["mit", "bei", "nach", "seit"]
+correct = 1
+explanation = "bei (+Dativ): at someone's place / at a business / near / while doing something. bei + dem = beim."
+
+[[questions]]
+question = "Er arbeitet _____ BMW."
+choices = ["von", "vom", "bei", "zu"]
+correct = 2
+explanation = "bei (+Dativ): at someone's place / at a business / near / while doing something. bei + dem = beim."
+
+[[questions]]
+question = "Unser Haus liegt _____ Bahnhof."
+choices = ["zum", "zur", "gegenüber", "beim"]
+correct = 3
+explanation = "bei (+Dativ): at someone's place / at a business / near / while doing something. bei + dem = beim."
+
+[[questions]]
+question = "Budenheim liegt _____ Mainz."
+choices = ["bei", "aus", "außer", "beim"]
+correct = 0
+explanation = "bei (+Dativ): at someone's place / at a business / near / while doing something. bei + dem = beim."
+
+[[questions]]
+question = "Ich habe kein Geld _____ mir."
+choices = ["mit", "bei", "nach", "seit"]
+correct = 1
+explanation = "bei (+Dativ): at someone's place / at a business / near / while doing something. bei + dem = beim."
+
+[[questions]]
+question = "Störe ich _____ Essen?"
+choices = ["von", "vom", "beim", "zu"]
+correct = 2
+explanation = "bei (+Dativ): at someone's place / at a business / near / while doing something. bei + dem = beim."
+
+[[questions]]
+question = "Ich bin _____ Lesen eingeschlafen."
+choices = ["zum", "zur", "gegenüber", "beim"]
+correct = 3
+explanation = "bei (+Dativ): at someone's place / at a business / near / while doing something. bei + dem = beim."
+
+[[questions]]
+question = "_____ schlechtem Wetter bleiben wir zu Hause."
+choices = ["Bei", "Aus", "Außer", "Beim"]
+correct = 0
+explanation = "bei (+Dativ): at someone's place / at a business / near / while doing something. bei + dem = beim."
+
+[[questions]]
+question = "Wie kannst du _____ dem Licht lesen?"
+choices = ["mit", "bei", "nach", "seit"]
+correct = 1
+explanation = "bei (+Dativ): at someone's place / at a business / near / while doing something. bei + dem = beim."
+
+[[questions]]
+question = "Früher habe ich _____ einer anderen Firma gearbeitet."
+choices = ["von", "vom", "bei", "zu"]
+correct = 2
+explanation = "bei (+Dativ): at someone's place / at a business / near / while doing something. bei + dem = beim."
+
+[[questions]]
+question = "Er saß mir _____."
+choices = ["zu", "zum", "zur", "gegenüber"]
+correct = 3
+explanation = "gegenüber (+Dativ): across from, opposite; toward (someone)."
+
+[[questions]]
+question = "Unserem Haus _____ ist eine gute Bäckerei."
+choices = ["gegenüber", "aus", "außer", "bei"]
+correct = 0
+explanation = "gegenüber (+Dativ): across from, opposite; toward (someone)."
+
+[[questions]]
+question = "Uns _____ war er immer sehr freundlich."
+choices = ["beim", "gegenüber", "mit", "nach"]
+correct = 1
+explanation = "gegenüber (+Dativ): across from, opposite; toward (someone)."
+
+[[questions]]
+question = "Kommen Sie _____ uns?"
+choices = ["von", "vom", "mit", "zu"]
+correct = 2
+explanation = "mit (+Dativ): with; by (means of transport)."
+
+[[questions]]
+question = "Er ist _____ dem Zug gekommen."
+choices = ["zum", "zur", "gegenüber", "mit"]
+correct = 3
+explanation = "mit (+Dativ): with; by (means of transport)."
+
+[[questions]]
+question = "Fahren Sie _____ Hamburg?"
+choices = ["nach", "aus", "außer", "bei"]
+correct = 0
+explanation = "nach (+Dativ): to (place names), after (time), according to."
+
+[[questions]]
+question = "Ich gehe _____ Hause."
+choices = ["beim", "nach", "mit", "seit"]
+correct = 1
+explanation = "nach (+Dativ): to (place names), after (time), according to."
+
+[[questions]]
+question = "Es ist zehn _____ fünf."
+choices = ["von", "vom", "nach", "zu"]
+correct = 2
+explanation = "nach (+Dativ): to (place names), after (time), according to."
+
+[[questions]]
+question = "Fahren Sie hier _____ links."
+choices = ["zum", "zur", "gegenüber", "nach"]
+correct = 3
+explanation = "nach (+Dativ): to (place names), after (time), according to."
+
+[[questions]]
+question = "Dem Wetterbericht _____ regnet es morgen."
+choices = ["nach", "aus", "außer", "bei"]
+correct = 0
+explanation = "nach (+Dativ): to (place names), after (time), according to."
+
+[[questions]]
+question = "Meiner Meinung _____ ist es dumm."
+choices = ["beim", "nach", "mit", "seit"]
+correct = 1
+explanation = "nach (+Dativ): to (place names), after (time), according to."
+
+[[questions]]
+question = "Wir wohnen _____ dem ersten April in Freiburg."
+choices = ["von", "vom", "seit", "zu"]
+correct = 2
+explanation = "seit (+Dativ): since (a point in time) / for (a period still ongoing)."
+
+[[questions]]
+question = "Sie wohnt _____ einer Woche bei uns."
+choices = ["zum", "zur", "gegenüber", "seit"]
+correct = 3
+explanation = "seit (+Dativ): since (a point in time) / for (a period still ongoing)."
+
+[[questions]]
+question = "Ich fahre _____ Stuttgart nach Köln."
+choices = ["von", "aus", "außer", "bei"]
+correct = 0
+explanation = "von (+Dativ): from, of, by; von + dem = vom."
+
+[[questions]]
+question = "Heute habe ich einen Brief _____ Thomas bekommen."
+choices = ["beim", "von", "mit", "nach"]
+correct = 1
+explanation = "von (+Dativ): from, of, by; von + dem = vom."
+
+[[questions]]
+question = "Das ist sehr nett _____ Ihnen."
+choices = ["seit", "vom", "von", "zu"]
+correct = 2
+explanation = "von (+Dativ): from, of, by; von + dem = vom."
+
+[[questions]]
+question = "Das Glas fiel _____ Tisch."
+choices = ["zum", "zur", "gegenüber", "vom"]
+correct = 3
+explanation = "von (+Dativ): from, of, by; von + dem = vom."
+
+[[questions]]
+question = "Er geht _____ Bahnhof."
+choices = ["zum", "aus", "außer", "bei"]
+correct = 0
+explanation = "zu (+Dativ): to (people, places in town); for (occasions). zu + dem = zum, zu + der = zur."
+
+[[questions]]
+question = "Er geht _____ seinem Freund."
+choices = ["beim", "zu", "mit", "nach"]
+correct = 1
+explanation = "zu (+Dativ): to (people, places in town); for (occasions). zu + dem = zum, zu + der = zur."
+
+[[questions]]
+question = "Er war sehr nett _____ ihr."
+choices = ["seit", "von", "zu", "vom"]
+correct = 2
+explanation = "zu (+Dativ): to (people, places in town); for (occasions). zu + dem = zum, zu + der = zur."
+
+[[questions]]
+question = "Er ist _____ Hause."
+choices = ["zum", "zur", "gegenüber", "zu"]
+correct = 3
+explanation = "zu (+Dativ): to (people, places in town); for (occasions). zu + dem = zum, zu + der = zur."
+
+[[questions]]
+question = "Wir gehen _____ Fuß."
+choices = ["zu", "aus", "außer", "bei"]
+correct = 0
+explanation = "zu (+Dativ): to (people, places in town); for (occasions). zu + dem = zum, zu + der = zur."
+
+[[questions]]
+question = "_____ Beispiel"
+choices = ["beim", "zum", "mit", "nach"]
+correct = 1
+explanation = "zu (+Dativ): to (people, places in town); for (occasions). zu + dem = zum, zu + der = zur."
+
+[[questions]]
+question = "_____ Schluss"
+choices = ["seit", "von", "zum", "vom"]
+correct = 2
+explanation = "zu (+Dativ): to (people, places in town); for (occasions). zu + dem = zum, zu + der = zur."
+
+[[questions]]
+question = "Wo warst du _____ Weihnachten?"
+choices = ["zum", "zur", "gegenüber", "zu"]
+correct = 3
+explanation = "zu (+Dativ): to (people, places in town); for (occasions). zu + dem = zum, zu + der = zur."
+
+[[questions]]
+question = "Was hast du _____ Weihnachten bekommen?"
+choices = ["zu", "aus", "außer", "bei"]
+correct = 0
+explanation = "zu (+Dativ): to (people, places in town); for (occasions). zu + dem = zum, zu + der = zur."
+
+[[questions]]
+question = "Geben Sie mir zehn Briefmarken _____ einem Euro."
+choices = ["beim", "zu", "mit", "nach"]
+correct = 1
+explanation = "zu (+Dativ): to (people, places in town); for (occasions). zu + dem = zum, zu + der = zur."

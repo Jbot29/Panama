@@ -1,0 +1,37 @@
+topic = "Reflexive Verben"
+
+[[questions]]
+question = "Ich freue _____, dass du im Mai kommen wirst."
+choices = ["mich", "dich", "sich", "uns"]
+correct = 0
+explanation = "1. Person Singular: das Reflexivpronomen im Akkusativ ist „mich\"."
+
+[[questions]]
+question = "Du musst _____ nicht kümmern."
+choices = ["mich", "dich", "sich", "euch"]
+correct = 1
+explanation = "2. Person Singular: das Reflexivpronomen ist „dich\"."
+
+[[questions]]
+question = "Er interessiert _____ für das neueste Buch von Margaret Atwood."
+choices = ["mich", "dich", "sich", "uns"]
+correct = 2
+explanation = "3. Person (er/sie/es) und Höflichkeitsform: immer „sich\"."
+
+[[questions]]
+question = "Sie zieht _____ aus."
+choices = ["mich", "dich", "uns", "sich"]
+correct = 3
+explanation = "3. Person Singular: „sich\". (sich ausziehen = to get undressed)"
+
+[[questions]]
+question = "Wir konzentrieren _____ auf die Arbeit."
+choices = ["uns", "mich", "dich", "euch"]
+correct = 0
+explanation = "1. Person Plural: das Reflexivpronomen ist „uns\"."
+
+[[questions]]
+question = "Habt ihr _____ wieder verfahren?"
+choices = ["uns", "euch", "sich", "mich"]
+correct = 1
+explanation = "2. Person Plural: das Reflexivpronomen ist „euch\"."

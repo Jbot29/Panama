@@ -1,0 +1,166 @@
+topic = "Präpositionen: Kasus"
+
+# Welchen Kasus verlangt jede Präposition?
+# Merged + deduped from the legacy präposition-genus / präpositionen-kasus YAML quizzes.
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „bis\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 0
+explanation = "Akkusativpräposition. Eselsbrücke: durch, für, gegen, ohne, um, bis."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „für\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 0
+explanation = "Akkusativpräposition. Eselsbrücke: durch, für, gegen, ohne, um, bis."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „durch\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 0
+explanation = "Akkusativpräposition. Eselsbrücke: durch, für, gegen, ohne, um, bis."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „gegen\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 0
+explanation = "Akkusativpräposition. Eselsbrücke: durch, für, gegen, ohne, um, bis."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „ohne\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 0
+explanation = "Akkusativpräposition. Eselsbrücke: durch, für, gegen, ohne, um, bis."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „um\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 0
+explanation = "Akkusativpräposition. Eselsbrücke: durch, für, gegen, ohne, um, bis."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „aus\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 1
+explanation = "Dativpräposition. Eselsbrücke: aus, außer, bei, mit, nach, seit, von, zu, gegenüber."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „außer\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 1
+explanation = "Dativpräposition. Eselsbrücke: aus, außer, bei, mit, nach, seit, von, zu, gegenüber."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „bei\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 1
+explanation = "Dativpräposition. Eselsbrücke: aus, außer, bei, mit, nach, seit, von, zu, gegenüber."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „mit\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 1
+explanation = "Dativpräposition. Eselsbrücke: aus, außer, bei, mit, nach, seit, von, zu, gegenüber."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „nach\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 1
+explanation = "Dativpräposition. Eselsbrücke: aus, außer, bei, mit, nach, seit, von, zu, gegenüber."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „seit\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 1
+explanation = "Dativpräposition. Eselsbrücke: aus, außer, bei, mit, nach, seit, von, zu, gegenüber."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „von\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 1
+explanation = "Dativpräposition. Eselsbrücke: aus, außer, bei, mit, nach, seit, von, zu, gegenüber."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „zu\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 1
+explanation = "Dativpräposition. Eselsbrücke: aus, außer, bei, mit, nach, seit, von, zu, gegenüber."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „(an)statt\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 2
+explanation = "Genitivpräposition. Eselsbrücke: (an)statt, trotz, während, wegen."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „trotz\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 2
+explanation = "Genitivpräposition. Eselsbrücke: (an)statt, trotz, während, wegen."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „während\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 2
+explanation = "Genitivpräposition. Eselsbrücke: (an)statt, trotz, während, wegen."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „wegen\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 2
+explanation = "Genitivpräposition. Eselsbrücke: (an)statt, trotz, während, wegen."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „an\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 3
+explanation = "Wechselpräposition — Akkusativ bei Richtung (wohin?), Dativ bei Ort (wo?)."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „auf\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 3
+explanation = "Wechselpräposition — Akkusativ bei Richtung (wohin?), Dativ bei Ort (wo?)."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „hinter\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 3
+explanation = "Wechselpräposition — Akkusativ bei Richtung (wohin?), Dativ bei Ort (wo?)."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „in\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 3
+explanation = "Wechselpräposition — Akkusativ bei Richtung (wohin?), Dativ bei Ort (wo?)."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „neben\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 3
+explanation = "Wechselpräposition — Akkusativ bei Richtung (wohin?), Dativ bei Ort (wo?)."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „über\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 3
+explanation = "Wechselpräposition — Akkusativ bei Richtung (wohin?), Dativ bei Ort (wo?)."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „unter\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 3
+explanation = "Wechselpräposition — Akkusativ bei Richtung (wohin?), Dativ bei Ort (wo?)."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „vor\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 3
+explanation = "Wechselpräposition — Akkusativ bei Richtung (wohin?), Dativ bei Ort (wo?)."
+
+[[questions]]
+question = "Welchen Kasus verlangt die Präposition „zwischen\"?"
+choices = ["Akkusativ", "Dativ", "Genitiv", "Wechselpräposition"]
+correct = 3
+explanation = "Wechselpräposition — Akkusativ bei Richtung (wohin?), Dativ bei Ort (wo?)."

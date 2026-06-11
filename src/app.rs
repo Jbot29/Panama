@@ -104,6 +104,10 @@ pub struct MyApp {
     pub tutor_detail_quiz_rx: Option<std::sync::mpsc::Receiver<Result<String, String>>>,
     // Image upload (new card flow — holds source path until card ID is assigned)
     pub new_card_upload_path: Option<PathBuf>,
+    // Math workspace (collapsible right panel in tutor sessions)
+    pub math_ws_open: bool,
+    pub math_ws_input: String,
+    pub math_ws_steps: Vec<crate::math_ws::MathStep>,
 }
 
 fn color32_to_rgba(c: egui::Color32) -> image::Rgba<u8> {
@@ -181,6 +185,9 @@ impl MyApp {
             tutor_detail_quiz_node_id: None,
             tutor_detail_quiz_rx: None,
             new_card_upload_path: None,
+            math_ws_open: false,
+            math_ws_input: String::new(),
+            math_ws_steps: Vec::new(),
         })
     }
 
@@ -1267,7 +1274,10 @@ impl MyApp {
                     .join("quizzes")
                     .join(format!("{}.toml", quiz_file));
                 match crate::quiz::load_quiz(&path) {
-                    Ok(qs) => {
+                    Ok(mut qs) => {
+                        for q in qs.iter_mut() {
+                            crate::quiz::shuffle_question(q);
+                        }
                         self.quiz_questions = qs;
                         self.quiz_idx = 0;
                         self.quiz_selected = None;

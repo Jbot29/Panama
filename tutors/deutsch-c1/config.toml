@@ -85,3 +85,50 @@ quiz_file = "relativsaetze"
 name = "Wortbildung"
 description = "Präfixe (ver-, zer-, ent-), Suffixe (-ung, -heit, -keit) und Komposita"
 quiz_file = "wortbildung"
+
+# --- Nodes salvaged from the legacy deutsch quiz repo (prepositions, cases, verbs) ---
+
+[[nodes]]
+name = "Dativpräpositionen"
+description = "Präpositionen mit Dativ: aus, außer, bei, gegenüber, mit, nach, seit, von, zu"
+quiz_file = "dativpraepositionen"
+
+[[nodes]]
+name = "Akkusativpräpositionen"
+description = "Präpositionen mit Akkusativ: bis, durch, für, gegen, ohne, um"
+quiz_file = "akkusativpraepositionen"
+
+[[nodes]]
+name = "Präpositionen: Kasus"
+description = "Welchen Kasus verlangt jede Präposition? (Akkusativ, Dativ, Genitiv, Wechsel)"
+quiz_file = "praepositionen-kasus"
+
+[[nodes]]
+name = "Temporale Präpositionen"
+description = "Zeitangaben: ab, an, bis, für, gegen, in, nach, seit, über, um, von…bis, vor, während"
+quiz_file = "temporale-praepositionen"
+
+[[nodes]]
+name = "Richtungspräpositionen (zu/nach/in/an/auf)"
+description = "Wohin? — zu, nach, in, an, auf bei Orten und Zielen, inkl. Kontraktionen (zum, zur, ins, ans, aufs)"
+quiz_file = "richtungspraepositionen"
+
+[[nodes]]
+name = "hin-/her- Präfixe"
+description = "Richtungsadverbien mit hin- (weg vom Sprecher) und her- (zum Sprecher): hinauf, herein, …"
+quiz_file = "hin-her-praefixe"
+
+[[nodes]]
+name = "Reflexive Verben"
+description = "Reflexivpronomen im Akkusativ und Dativ: mich, dich, sich, uns, euch"
+quiz_file = "reflexive-verben"
+
+[[nodes]]
+name = "Präteritum"
+description = "Vergangenheitsform, v.a. von haben, sein und Modalverben in der Schriftsprache"
+quiz_file = "praeteritum"
+
+[[nodes]]
+name = "wissen vs. kennen"
+description = "Faktenwissen (wissen, oft mit Nebensatz) gegenüber Vertrautheit (kennen, mit Objekt)"
+quiz_file = "wissen-kennen"

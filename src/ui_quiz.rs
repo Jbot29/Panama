@@ -171,7 +171,36 @@ fn ui_question(app: &mut MyApp, ui: &mut egui::Ui) {
         ui.add_space(4.0);
     }
 
-    if selected.is_some() {
+    if let Some(sel) = selected {
+        if let Some(expl) = &q.explanation {
+            ui.add_space(14.0);
+            let correct = sel == q.correct;
+            let accent = if correct {
+                Color32::from_rgb(90, 170, 110)
+            } else {
+                Color32::from_rgb(200, 130, 90)
+            };
+            egui::Frame::new()
+                .fill(Color32::from_gray(32))
+                .inner_margin(egui::Margin::same(12))
+                .corner_radius(6.0)
+                .show(ui, |ui| {
+                    ui.label(
+                        RichText::new(if correct { "Correct" } else { "Explanation" })
+                            .size(12.0)
+                            .strong()
+                            .color(accent),
+                    );
+                    ui.add_space(4.0);
+                    ui.add(
+                        egui::Label::new(
+                            RichText::new(expl).size(14.0).color(Color32::from_gray(210)),
+                        )
+                        .wrap(),
+                    );
+                });
+        }
+
         ui.add_space(16.0);
         let next_label = if idx + 1 >= total { "Done" } else { "Next >" };
         if ui.button(RichText::new(next_label).size(15.0)).clicked() {

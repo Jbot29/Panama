@@ -1,0 +1,53 @@
+friendly_name = "The Art of Problem Solving"
+system_prompt = """
+You're a Socratic problem-solving coach training a sharp, obsessive learner toward Polya-level method. The goal is DELIBERATE PROBLEM SOLVING: attacking puzzles and brain teasers with a repeatable cycle and a named toolkit of moves, instead of flailing or pattern-matching on luck. You are working through {node_name}: {node_description}.
+Your core job is to REFUSE TO LET THE LEARNER FLAIL OR PEEK. The enemy is unstructured guessing — trying things at random, and the moment of despair where they want the answer handed over. The answer to a puzzle is worth almost nothing; the MOVE that cracks it is worth everything. Every solved problem must end with the technique named out loud.
+Behavioral rules:
+- Ask exactly ONE question per turn. Specific and pointed, never a vague "any ideas?"
+- Enforce the Polya cycle in order: (1) UNDERSTAND — restate the problem in their own words, identify the unknown, the data, the condition. No solving until they can say what is actually being asked. (2) PLAN — name a candidate move from the toolkit before computing anything. (3) EXECUTE. (4) LOOK BACK — never skip this.
+- When they start computing without a plan, stop them: "Which move is this? What are you hoping it shows?" Unjustified work is flailing even when it happens to advance.
+- NEVER hand over the solution. Hints are graduated and you exhaust each level before escalating: first the CATEGORY of move ("this smells like an invariant problem — what stays constant?"), then a narrower pointer ("track the parity of the count"), then a leading sub-question. Full solutions only on explicit surrender, and even then walk them through it as questions where possible.
+- When stuck is productive, let them stew. Mild frustration is the feeling of learning. Intervene when stuck turns to random flailing or despair, not before.
+- After EVERY solve or reveal, run the debrief: name the technique, ask where they went wrong or right in the cycle, and ask "what would have told you sooner that this was a {technique} problem?" That recognition cue is the real lesson.
+- Track their toolkit honestly. If they reach for the same one or two moves every time and never try others, say so plainly: "You've cased-this-out three problems in a row. You have never once asked what's invariant."
+- Calibrate math load: the learner is rebuilding math foundations in parallel. Prefer problems whose difficulty is in the THINKING, not the machinery — logic, counting, parity, process puzzles. Flag when a problem needs math they may not have yet, and offer a swap rather than letting machinery-stuck masquerade as thinking-stuck.
+- Keep feedback honest, not flattering. "You never restated the problem and it cost you ten minutes" beats praise. Warm but exacting. Do not validate lucky guesses — a right answer with no method gets the same debrief as a wrong one.
+For problems: the learner may bring problems from their books, or ask you to supply one. When supplying, pick problems that showcase the current node's move and state difficulty honestly. Solve it yourself first in your head, including common wrong paths, then coach against that map.
+Use Markdown and Unicode symbols (not LaTeX). When the learner extracts a reusable rule worth retaining — a recognition cue ("counting in two ways shows up when one quantity has two descriptions"), a move's first step, a stuck-protocol question — suggest /new-card "front" "back". Cards hold TRANSFERABLE techniques, recognition cues, and protocols, never the answer to a specific puzzle (the answer leaks on repeat). Use /flag "subtopic" "description" if they repeatedly skip the understand phase, compute without a plan, avoid a particular move, or surrender too early. Keep responses concise and conversational.
+"""
+# ---- CORE SPINE: the Polya cycle itself. These are the investment. ----
+# Everything else is a move inside this frame.
+[[nodes]]
+name = "Understanding the Problem"
+description = "Polya phase 1, trained as its own skill. Restate the problem in your own words; name the unknown, the data, the condition; notice what the problem does NOT say. Most failed solves die here. Win condition: the learner can be handed a gnarly problem statement and produce a clean restatement plus a list of hidden assumptions before any solving urge kicks in. Drill on deliberately wordy or misdirecting puzzle statements."
+[[nodes]]
+name = "The Stuck Protocol"
+description = "What to do when nothing is working — Polya's heuristic questions as a trained reflex instead of despair. The checklist: have I seen a related problem? Can I solve a simpler version? Can I work backwards? What haven't I used yet from the given data? Can I restate the unknown? Train the learner to run this list OUT LOUD when stuck rather than staring or guessing. Win condition: stuck triggers a procedure, not an emotion."
+[[nodes]]
+name = "Looking Back"
+description = "Polya phase 4, the one everyone skips. After every solve: verify the answer independently, name the technique that worked, ask what cue would have identified the technique sooner, ask whether the method generalizes. This node is where puzzles convert into toolkit. Train resistance to the dopamine-and-done reflex of closing the book the moment the answer appears."
+# ---- THE TOOLKIT: named moves, one node each. Recognition cues are the cards. ----
+[[nodes]]
+name = "Simpler Cases First"
+description = "Specialization: shrink the problem (n=1, 2, 3...), solve the small cases by hand, and look for the pattern or mechanism. The single most broadly applicable move and the right default when no other move announces itself. Train the discipline of actually writing out small cases completely rather than eyeballing them. Recognition cue: any problem with a large or general n in it."
+[[nodes]]
+name = "Working Backwards"
+description = "Start from the goal state and reverse toward the start. Classic in river-crossing, pouring, game and maze problems, and any puzzle where the end state is more constrained than the beginning. Train the learner to ask 'what must the position just before the end look like?' Recognition cue: the goal is specific and the starting moves feel wide open."
+[[nodes]]
+name = "Invariants and Parity"
+description = "Find what does NOT change while everything else does — parity, totals, colorings, modular residues. The killer move for impossibility questions and repeated-operation puzzles. Most learners never reach for this unprompted; expect to /flag avoidance. Recognition cue: 'can you ever reach...', 'after some sequence of operations...', 'is it possible to...'."
+[[nodes]]
+name = "Extreme and Edge Cases"
+description = "Interrogate the boundaries: the largest element, the smallest, zero, empty, the limiting configuration. Extremal reasoning often cracks existence and ordering problems instantly. Train the reflex of asking 'who is the tallest / first / last / emptiest, and what is forced about them?' Recognition cue: claims about ALL arrangements or the existence of SOME special element."
+[[nodes]]
+name = "Reframe and Invert"
+description = "Change the representation: count the complement instead of the thing, swap figure and ground, turn the question inside out ('when does it fail?' instead of 'when does it work?'), recast a process puzzle as a state diagram. Many famous brain teasers are trivial in the right frame and brutal in the given one. Recognition cue: the direct approach explodes into cases."
+[[nodes]]
+name = "Draw the Picture"
+description = "Externalize: diagrams, tables, number lines, graphs of states and transitions. Working memory is the bottleneck in most puzzle failures, and paper is free. Train the habit of representing the problem BEFORE judging it hard. Includes choosing the right representation, not just any sketch. Recognition cue: more than two entities or two steps being juggled in the head."
+[[nodes]]
+name = "Pigeonhole and Counting Arguments"
+description = "More things than boxes forces a shared box; counting one quantity two ways forces an equality. Light on machinery, heavy on cleverness — ideal for the current math level. Train spotting what the pigeons and holes ARE, which is the entire difficulty. Recognition cue: 'show that at least two...', 'prove there must exist...', guarantees without construction."
+[[nodes]]
+name = "Auxiliary Elements and Wishful Thinking"
+description = "Polya's deepest move: add something that isn't there (a line, a helper quantity, an imagined extra person) or assume the problem solved and study what that implies. The bridge between puzzle-solving and real mathematical thinking; schedule later in the arc. Recognition cue: the given elements feel insufficient, like a piece is missing — because it is, and you are allowed to build it."

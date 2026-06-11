@@ -10,6 +10,7 @@ pub struct QuizQuestion {
     pub choices: Vec<String>,
     pub correct: usize,
     pub topic: String,
+    pub explanation: Option<String>,
 }
 
 #[derive(Deserialize)]
@@ -23,6 +24,8 @@ struct QuestionEntry {
     question: String,
     choices: Vec<String>,
     correct: usize,
+    #[serde(default)]
+    explanation: Option<String>,
 }
 
 pub fn load_quiz(path: &Path) -> Result<Vec<QuizQuestion>> {
@@ -36,8 +39,23 @@ pub fn load_quiz(path: &Path) -> Result<Vec<QuizQuestion>> {
             choices: q.choices,
             correct: q.correct,
             topic: qf.topic.clone(),
+            explanation: q.explanation,
         })
         .collect())
+}
+
+/// Shuffle a question's choices in place, remapping `correct` to the answer's
+/// new position. Keeps answers from being memorizable by their slot.
+pub fn shuffle_question(q: &mut QuizQuestion) {
+    use rand::seq::SliceRandom;
+    let n = q.choices.len();
+    if n < 2 {
+        return;
+    }
+    let mut order: Vec<usize> = (0..n).collect();
+    order.shuffle(&mut rand::thread_rng());
+    q.choices = order.iter().map(|&i| q.choices[i].clone()).collect();
+    q.correct = order.iter().position(|&i| i == q.correct).unwrap_or(0);
 }
 
 #[derive(Clone)]

@@ -1,0 +1,31 @@
+topic = "Präteritum"
+
+[[questions]]
+question = "Ihr _____ im Zoo. (haben oder sein)"
+choices = ["wart", "hattet", "seid", "wurdet"]
+correct = 0
+explanation = "sein, 2. Person Plural Präteritum: „wart\"."
+
+[[questions]]
+question = "Du _____ Kopfschmerzen. (haben oder sein)"
+choices = ["warst", "hattest", "hattet", "hatte"]
+correct = 1
+explanation = "haben, 2. Person Singular Präteritum: „hattest\"."
+
+[[questions]]
+question = "Er _____ nicht zu Hause. (haben oder sein)"
+choices = ["hatte", "wurde", "war", "ist"]
+correct = 2
+explanation = "sein, 3. Person Singular Präteritum: „war\"."
+
+[[questions]]
+question = "Ich _____ nicht durstig. (haben oder sein)"
+choices = ["hatte", "wurde", "bin", "war"]
+correct = 3
+explanation = "sein, 1. Person Singular Präteritum: „war\"."
+
+[[questions]]
+question = "_____ Sie als Kind einen Hund? (haben oder sein)"
+choices = ["Hatten", "Waren", "Wurden", "Hattet"]
+correct = 0
+explanation = "haben, Höflichkeitsform Präteritum: „Hatten\"."

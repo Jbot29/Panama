@@ -1,0 +1,301 @@
+topic = "Richtungspräpositionen (zu/nach/in/an/auf)"
+
+[[questions]]
+question = "Ich gehe _____ Arzt."
+choices = ["zum", "zu", "zur", "nach"]
+correct = 0
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich gehe _____ einem Freund."
+choices = ["in", "zu", "ins", "an"]
+correct = 1
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich gehe _____ meinen Eltern."
+choices = ["ans", "auf", "zu", "aufs"]
+correct = 2
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich gehe _____ Apotheke."
+choices = ["zu", "zum", "nach", "zur"]
+correct = 3
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich fahre _____ Post."
+choices = ["zur", "in", "ins", "an"]
+correct = 0
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich fahre _____ U-Bahn."
+choices = ["ans", "zur", "auf", "aufs"]
+correct = 1
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich fahre _____ Bahnhof."
+choices = ["zu", "zur", "zum", "nach"]
+correct = 2
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich fahre _____ Flughafen."
+choices = ["in", "ins", "an", "zum"]
+correct = 3
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich fahre _____ Ikea."
+choices = ["zu", "ans", "auf", "aufs"]
+correct = 0
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich gehe _____ Toilette."
+choices = ["zu", "zur", "zum", "nach"]
+correct = 1
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich fahre _____ nächsten Ampel."
+choices = ["in", "ins", "zur", "an"]
+correct = 2
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich gehe _____ einer Hochzeit."
+choices = ["ans", "auf", "aufs", "zu"]
+correct = 3
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich gehe _____ einer Geburtstagsparty."
+choices = ["zu", "zum", "zur", "nach"]
+correct = 0
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich gehe _____ einem Konzert."
+choices = ["in", "zu", "ins", "an"]
+correct = 1
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Sie fliegen _____ Mond."
+choices = ["ans", "auf", "zum", "aufs"]
+correct = 2
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich fahre _____ Wannsee."
+choices = ["zu", "zur", "nach", "zum"]
+correct = 3
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich muss _____ Arbeit gehen."
+choices = ["zur", "in", "ins", "an"]
+correct = 0
+explanation = "zu (+Dat): to people/professionals and to localities within a town. zu+dem=zum, zu+der=zur."
+
+[[questions]]
+question = "Ich fahre _____ Paris."
+choices = ["ans", "nach", "auf", "aufs"]
+correct = 1
+explanation = "nach (+Dat): to cities, regions and countries without an article; also directions (links/rechts)."
+
+[[questions]]
+question = "Ich fahre _____ Kreuzberg."
+choices = ["zu", "zum", "nach", "zur"]
+correct = 2
+explanation = "nach (+Dat): to cities, regions and countries without an article; also directions (links/rechts)."
+
+[[questions]]
+question = "Ich fahre _____ Bayern."
+choices = ["in", "ins", "an", "nach"]
+correct = 3
+explanation = "nach (+Dat): to cities, regions and countries without an article; also directions (links/rechts)."
+
+[[questions]]
+question = "Ich gehe _____ rechts."
+choices = ["nach", "ans", "auf", "aufs"]
+correct = 0
+explanation = "nach (+Dat): to cities, regions and countries without an article; also directions (links/rechts)."
+
+[[questions]]
+question = "Ich gehe _____ Krankenhaus."
+choices = ["zu", "ins", "zum", "zur"]
+correct = 1
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich gehe _____ Kino."
+choices = ["nach", "in", "ins", "an"]
+correct = 2
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich gehe _____ Theater."
+choices = ["ans", "auf", "aufs", "ins"]
+correct = 3
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich gehe _____ Museum."
+choices = ["ins", "zu", "zum", "zur"]
+correct = 0
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich gehe _____ die Apotheke."
+choices = ["nach", "in", "ins", "an"]
+correct = 1
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich gehe _____ Schwimmbad."
+choices = ["ans", "auf", "ins", "aufs"]
+correct = 2
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich gehe _____ Fitnessstudio."
+choices = ["zu", "zum", "zur", "ins"]
+correct = 3
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich gehe _____ Atelier."
+choices = ["ins", "nach", "in", "an"]
+correct = 0
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich gehe _____ Stadion."
+choices = ["ans", "ins", "auf", "aufs"]
+correct = 1
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich fahre _____ die USA."
+choices = ["zu", "zum", "in", "zur"]
+correct = 2
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich fahre _____ die Niederlande."
+choices = ["nach", "ins", "an", "in"]
+correct = 3
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich fahre _____ den Norden."
+choices = ["in", "ans", "auf", "aufs"]
+correct = 0
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Wir fahren _____ Stadtzentrum."
+choices = ["zu", "ins", "zum", "zur"]
+correct = 1
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich muss jetzt _____ die Bergmannstraße."
+choices = ["nach", "ins", "in", "an"]
+correct = 2
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich fahre _____ die Berge."
+choices = ["ans", "auf", "aufs", "in"]
+correct = 3
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich fahre _____ den Park."
+choices = ["in", "zu", "zum", "zur"]
+correct = 0
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich gehe _____ die Küche."
+choices = ["nach", "in", "ins", "an"]
+correct = 1
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich gehe _____ Bett."
+choices = ["ans", "auf", "ins", "aufs"]
+correct = 2
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Er wohnt in Berlin, _____ der Mozartstraße."
+choices = ["zu", "zum", "zur", "in"]
+correct = 3
+explanation = "in (+Akk, directional): to/into buildings, streets, mountains, parks, and countries that take an article. in+das=ins."
+
+[[questions]]
+question = "Ich fahre _____ die Ostsee."
+choices = ["an", "nach", "in", "ins"]
+correct = 0
+explanation = "an (Wechsel, +Akk directional): to seas, coasts, water, the wall/window. an+das=ans."
+
+[[questions]]
+question = "Ich fahre _____ die Ostküste."
+choices = ["ans", "an", "auf", "aufs"]
+correct = 1
+explanation = "an (Wechsel, +Akk directional): to seas, coasts, water, the wall/window. an+das=ans."
+
+[[questions]]
+question = "Ich fahre _____ Mittelmeer."
+choices = ["zu", "zum", "ans", "zur"]
+correct = 2
+explanation = "an (Wechsel, +Akk directional): to seas, coasts, water, the wall/window. an+das=ans."
+
+[[questions]]
+question = "Ich fahre _____ Meer."
+choices = ["nach", "in", "ins", "ans"]
+correct = 3
+explanation = "an (Wechsel, +Akk directional): to seas, coasts, water, the wall/window. an+das=ans."
+
+[[questions]]
+question = "Ich gehe _____ eine Party."
+choices = ["auf", "an", "ans", "aufs"]
+correct = 0
+explanation = "auf (Wechsel, +Akk directional): to open markets, squares, small islands, the loo, the countryside. auf+das=aufs."
+
+[[questions]]
+question = "Ich gehe _____ die Toilette."
+choices = ["zu", "auf", "zum", "zur"]
+correct = 1
+explanation = "auf (Wechsel, +Akk directional): to open markets, squares, small islands, the loo, the countryside. auf+das=aufs."
+
+[[questions]]
+question = "Ich gehe _____ den Flohmarkt."
+choices = ["nach", "in", "auf", "ins"]
+correct = 2
+explanation = "auf (Wechsel, +Akk directional): to open markets, squares, small islands, the loo, the countryside. auf+das=aufs."
+
+[[questions]]
+question = "Wir gehen _____ den Spielplatz."
+choices = ["an", "ans", "aufs", "auf"]
+correct = 3
+explanation = "auf (Wechsel, +Akk directional): to open markets, squares, small islands, the loo, the countryside. auf+das=aufs."
+
+[[questions]]
+question = "Wir ziehen _____ Land."
+choices = ["aufs", "zu", "zum", "zur"]
+correct = 0
+explanation = "auf (Wechsel, +Akk directional): to open markets, squares, small islands, the loo, the countryside. auf+das=aufs."
+
+[[questions]]
+question = "Wie kommt man _____ die Museumsinsel?"
+choices = ["nach", "auf", "in", "ins"]
+correct = 1
+explanation = "auf (Wechsel, +Akk directional): to open markets, squares, small islands, the loo, the countryside. auf+das=aufs."

@@ -12,6 +12,8 @@ use app::MyApp;
 
 mod config;
 mod draw;
+mod math_ws;
+mod ui_math_ws;
 mod svg_diagram;
 mod ui;
 mod nodes;
@@ -37,31 +39,56 @@ impl eframe::App for MyApp {
         self.poll_create_tutor(ctx);
         self.poll_detail_quiz(ctx);
 
-        egui::SidePanel::left("left_controls")
-            .resizable(true) // user can drag to resize
-            .min_width(220.0)
-            .default_width(300.0)
-            .show(ctx, |ui| {
+        egui::TopBottomPanel::top("top_nav").show(ctx, |ui| {
+            ui.horizontal(|ui| {
                 ui.heading("Panama");
                 ui.separator();
 
-                if ui.button("Cards").clicked() {
+                let in_cards = matches!(
+                    self.view,
+                    View::Cards | View::Review | View::NewCard | View::EditCard
+                );
+                if ui.selectable_label(in_cards, "Cards").clicked() {
                     self.view = View::Cards;
                 }
 
-                if ui.button("Tutors").clicked() {
+                let in_tutors = matches!(
+                    self.view,
+                    View::Tutors | View::CreateTutor | View::TutorDetail | View::TutorSession
+                );
+                if ui.selectable_label(in_tutors, "Tutors").clicked() {
                     self.load_available_tutors();
                     self.view = View::Tutors;
                 }
 
-                if ui.button("Quiz").clicked() {
+                let in_quiz = matches!(self.view, View::Quiz);
+                if ui.selectable_label(in_quiz, "Quiz").clicked() {
                     self.load_available_tutors();
                     self.quiz_active_tutor = None;
                     self.quiz_questions.clear();
                     self.view = View::Quiz;
                 }
 
+                if self.view == View::TutorSession {
+                    ui.with_layout(
+                        egui::Layout::right_to_left(egui::Align::Center),
+                        |ui| {
+                            ui.toggle_value(&mut self.math_ws_open, "∑ Workspace");
+                        },
+                    );
+                }
             });
+        });
+
+        if self.view == View::TutorSession {
+            egui::SidePanel::right("math_workspace")
+                .resizable(true)
+                .min_width(280.0)
+                .default_width(380.0)
+                .show_animated(ctx, self.math_ws_open, |ui| {
+                    ui_math_ws::ui_math_ws(self, ui);
+                });
+        }
         egui::CentralPanel::default().show(ctx, |ui| {
             match self.view {
                 View::Base => {

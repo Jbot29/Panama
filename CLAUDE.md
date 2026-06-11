@@ -14,13 +14,13 @@ cargo build -r        # build only
 cargo check           # fast type-check without building
 ```
 
-No test suite exists. `cargo check` is the fastest way to validate changes.
+`cargo check` is the fastest way to validate changes. The only unit tests are the math-workspace checks: `cargo test math_ws`.
 
 ## Architecture
 
 ### Views
 
-The `View` enum in `app_structs.rs` drives which panel renders in the central area. The left sidebar is always visible.
+The `View` enum in `app_structs.rs` drives which panel renders in the central area. A thin top bar (in `main.rs`) holds navigation as section-aware `selectable_label`s.
 
 | View | File | Purpose |
 |---|---|---|
@@ -107,6 +107,12 @@ correct = 0  # 0-based index
 `ui_quiz.rs` — Tutor-aware. Selecting a tutor calls `select_weakest_quiz_node` (picks the node whose most recent quiz session has the lowest score, NULLS FIRST). After completing a quiz, `save_quiz_session` records the result and `update_node_mastery` adjusts the node's score by `(score - 0.5) * 0.3` — so 100% adds +0.15, 0% subtracts −0.15.
 
 Quiz files are loaded from `tutors/{slug}/quizzes/{quiz_file}.toml`.
+
+### Math Workspace (fasteval)
+
+A collapsible right `SidePanel` in `TutorSession`, toggled by "∑ Workspace" in the top bar (default closed). The user types a derivation line by line; each line is checked for mathematical equivalence against the last good line. Statuses: `Given` ●, `Valid` ✓, `Invalid` ✗, `Error` ⚠. Bad lines stay visible but never become the baseline. UI in `ui_math_ws.rs` includes a collapsible syntax cheatsheet.
+
+Validation in `math_ws.rs` (`check_step`) is purely numeric, via `fasteval` (pure Rust, MIT — deliberately chosen over Symbolica, whose free tier aborts the process on a second instance/thread). Two lines are equivalent when they agree at 5 deterministic sample points in (0.3, 2.8). Equations (`lhs = rhs`) are reduced to residuals and accepted when the residuals are proportional by one nonzero constant — so multiplying both sides by an expression containing a variable correctly fails. A `preprocess` pass inserts the `*` fasteval needs (`2x` → `2*x`, `(a)(b)` → `(a)*(b)`), preserving scientific notation. `sqrt`/`exp`/`ln`/`pi`/`e` are supplied through the eval namespace (`RESERVED`); everything else unknown is a sampled variable.
 
 ### Chat Commands
 

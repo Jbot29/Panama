@@ -1,0 +1,79 @@
+topic = "hin-/her- Präfixe"
+
+[[questions]]
+question = "Das Wasser vom Gletscher braust bis weit in die Ebene _____."
+choices = ["hinab", "hinauf", "hinaus", "hinein"]
+correct = 0
+explanation = "hin- = movement away from the speaker, toward another place. hinab = down/downwards."
+
+[[questions]]
+question = "Der Weg zum Schloss _____ ist ein wenig anstrengend."
+choices = ["hinüber", "hinauf", "hinunter", "herab"]
+correct = 1
+explanation = "hin- = movement away from the speaker, toward another place. hinauf = upwards."
+
+[[questions]]
+question = "_____ ins Freie (gehen)"
+choices = ["heran", "herauf", "hinaus", "heraus"]
+correct = 2
+explanation = "hin- = movement away from the speaker, toward another place. hinaus = out/outside."
+
+[[questions]]
+question = "Sie dürfen jetzt zum Chef _____."
+choices = ["herein", "herüber", "herunter", "hinein"]
+correct = 3
+explanation = "hin- = movement away from the speaker, toward another place. hinein = in/inside."
+
+[[questions]]
+question = "Er ging _____ zur anderen Straßenseite."
+choices = ["hinüber", "hinab", "hinauf", "hinaus"]
+correct = 0
+explanation = "hin- = movement away from the speaker, toward another place. hinüber = over (to the other side)."
+
+[[questions]]
+question = "Er raste die Straße _____."
+choices = ["hinein", "hinunter", "hinüber", "herab"]
+correct = 1
+explanation = "hin- = movement away from the speaker, toward another place. hinunter = down."
+
+[[questions]]
+question = "Die Radfahrer fuhren den Berg zur Ziellinie _____."
+choices = ["heran", "herauf", "herab", "heraus"]
+correct = 2
+explanation = "her- = movement toward the speaker. herab = downwards."
+
+[[questions]]
+question = "Eichensetzlinge wachsen zu Eichen _____."
+choices = ["herein", "herüber", "herunter", "heran"]
+correct = 3
+explanation = "her- = movement toward the speaker. heran = up to / closer."
+
+[[questions]]
+question = "Standard & Poor's stufte Griechenland wieder _____."
+choices = ["herauf", "hinab", "hinauf", "hinaus"]
+correct = 0
+explanation = "her- = movement toward the speaker. herauf = upwards (here: upgraded)."
+
+[[questions]]
+question = "Er kommt nicht mehr aus seinem Zimmer _____."
+choices = ["hinein", "heraus", "hinüber", "hinunter"]
+correct = 1
+explanation = "her- = movement toward the speaker. heraus = out/outside."
+
+[[questions]]
+question = "Kommen Sie bitte _____!"
+choices = ["herab", "heran", "herein", "herauf"]
+correct = 2
+explanation = "her- = movement toward the speaker. herein = in/inside (Please enter!)."
+
+[[questions]]
+question = "Komm zu mir _____."
+choices = ["heraus", "herein", "herunter", "herüber"]
+correct = 3
+explanation = "her- = movement toward the speaker. herüber = over (to where I am)."
+
+[[questions]]
+question = "Komm sofort wieder vom Sofa _____!"
+choices = ["herunter", "hinab", "hinauf", "hinaus"]
+correct = 0
+explanation = "her- = movement toward the speaker. herunter = down."

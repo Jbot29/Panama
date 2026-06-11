@@ -1,0 +1,175 @@
+topic = "Akkusativpräpositionen"
+
+[[questions]]
+question = "Frühtemperaturen minus fünf _____ ein Grad."
+choices = ["bis", "durch", "für", "gegen"]
+correct = 0
+explanation = "bis (+Akk): until (time), by (a deadline), as far as (places). Often paired: bis auf, bis zu."
+
+[[questions]]
+question = "Wir sind _____ an die deutsche Grenze gefahren."
+choices = ["ohne", "bis", "um", "durch"]
+correct = 1
+explanation = "bis (+Akk): until (time), by (a deadline), as far as (places). Often paired: bis auf, bis zu."
+
+[[questions]]
+question = "_____ auf zwei Kinder wurden alle gerettet."
+choices = ["Für", "Gegen", "Bis", "Ohne"]
+correct = 2
+explanation = "bis (+Akk): until (time), by (a deadline), as far as (places). Often paired: bis auf, bis zu."
+
+[[questions]]
+question = "Das Geschäft ist von 9 Uhr _____ 18 Uhr geöffnet."
+choices = ["um", "durch", "für", "bis"]
+correct = 3
+explanation = "bis (+Akk): until (time), by (a deadline), as far as (places). Often paired: bis auf, bis zu."
+
+[[questions]]
+question = "Wir arbeiteten _____ spät in die Nacht."
+choices = ["bis", "gegen", "ohne", "um"]
+correct = 0
+explanation = "bis (+Akk): until (time), by (a deadline), as far as (places). Often paired: bis auf, bis zu."
+
+[[questions]]
+question = "Sie kam _____ an die Tür."
+choices = ["durch", "bis", "für", "gegen"]
+correct = 1
+explanation = "bis (+Akk): until (time), by (a deadline), as far as (places). Often paired: bis auf, bis zu."
+
+[[questions]]
+question = "Max bleibt noch _____ nächste Woche hier."
+choices = ["ohne", "um", "bis", "durch"]
+correct = 2
+explanation = "bis (+Akk): until (time), by (a deadline), as far as (places). Often paired: bis auf, bis zu."
+
+[[questions]]
+question = "Ich werde _____ nächstes Jahr bei meiner Firma bleiben."
+choices = ["für", "gegen", "ohne", "bis"]
+correct = 3
+explanation = "bis (+Akk): until (time), by (a deadline), as far as (places). Often paired: bis auf, bis zu."
+
+[[questions]]
+question = "Ich habe _____ jetzt Game of Thrones nicht gesehen."
+choices = ["bis", "um", "durch", "für"]
+correct = 0
+explanation = "bis (+Akk): until (time), by (a deadline), as far as (places). Often paired: bis auf, bis zu."
+
+[[questions]]
+question = "_____ dahin bin ich längst in Berlin zurück."
+choices = ["Gegen", "Bis", "Ohne", "Um"]
+correct = 1
+explanation = "bis (+Akk): until (time), by (a deadline), as far as (places). Often paired: bis auf, bis zu."
+
+[[questions]]
+question = "_____ 2018 habe ich in Austin gewohnt."
+choices = ["Durch", "Für", "Bis", "Gegen"]
+correct = 2
+explanation = "bis (+Akk): until (time), by (a deadline), as far as (places). Often paired: bis auf, bis zu."
+
+[[questions]]
+question = "_____ zum 19. Jahrhundert waren Autos selten."
+choices = ["Ohne", "Um", "Durch", "Bis"]
+correct = 3
+explanation = "bis (+Akk): until (time), by (a deadline), as far as (places). Often paired: bis auf, bis zu."
+
+[[questions]]
+question = "_____ vor Kurzem habe ich eine Kaffeemaschine benutzt."
+choices = ["Bis", "Für", "Gegen", "Ohne"]
+correct = 0
+explanation = "bis (+Akk): until (time), by (a deadline), as far as (places). Often paired: bis auf, bis zu."
+
+[[questions]]
+question = "Es juckt von Kopf _____ Fuß."
+choices = ["um", "bis", "durch", "für"]
+correct = 1
+explanation = "bis (+Akk): until (time), by (a deadline), as far as (places). Often paired: bis auf, bis zu."
+
+[[questions]]
+question = "Ich habe von oben _____ unten gesucht."
+choices = ["gegen", "ohne", "bis", "um"]
+correct = 2
+explanation = "bis (+Akk): until (time), by (a deadline), as far as (places). Often paired: bis auf, bis zu."
+
+[[questions]]
+question = "Wir sind _____ die Stadt gefahren."
+choices = ["bis", "für", "gegen", "durch"]
+correct = 3
+explanation = "durch (+Akk): through; by means of."
+
+[[questions]]
+question = "Ich habe das _____ Zufall gehört."
+choices = ["durch", "ohne", "um", "bis"]
+correct = 0
+explanation = "durch (+Akk): through; by means of."
+
+[[questions]]
+question = "Ich lernte ihn _____ Freunde kennen."
+choices = ["für", "durch", "gegen", "ohne"]
+correct = 1
+explanation = "durch (+Akk): through; by means of."
+
+[[questions]]
+question = "Ist Post _____ mich da?"
+choices = ["um", "bis", "für", "durch"]
+correct = 2
+explanation = "für (+Akk): for."
+
+[[questions]]
+question = "Ich habe es _____ 20 Euro gekauft."
+choices = ["gegen", "ohne", "um", "für"]
+correct = 3
+explanation = "für (+Akk): for."
+
+[[questions]]
+question = "Was haben Sie _____ ihn?"
+choices = ["gegen", "bis", "durch", "für"]
+correct = 0
+explanation = "gegen (+Akk): against; into (a collision); around (an approximate time/number)."
+
+[[questions]]
+question = "Er ist _____ einen Baum gefahren."
+choices = ["ohne", "gegen", "um", "bis"]
+correct = 1
+explanation = "gegen (+Akk): against; into (a collision); around (an approximate time/number)."
+
+[[questions]]
+question = "Es waren _____ hundert Leute da."
+choices = ["durch", "für", "gegen", "ohne"]
+correct = 2
+explanation = "gegen (+Akk): against; into (a collision); around (an approximate time/number)."
+
+[[questions]]
+question = "Wir kommen _____ Mitternacht an."
+choices = ["um", "bis", "durch", "gegen"]
+correct = 3
+explanation = "gegen (+Akk): against; into (a collision); around (an approximate time/number)."
+
+[[questions]]
+question = "Er ist _____ seinen Mantel weggegangen."
+choices = ["ohne", "für", "gegen", "um"]
+correct = 0
+explanation = "ohne (+Akk): without."
+
+[[questions]]
+question = "Geh nicht _____ mich."
+choices = ["bis", "ohne", "durch", "für"]
+correct = 1
+explanation = "ohne (+Akk): without."
+
+[[questions]]
+question = "Er kommt gerade _____ die Ecke."
+choices = ["gegen", "ohne", "um", "bis"]
+correct = 2
+explanation = "um (+Akk): around; at (a clock time)."
+
+[[questions]]
+question = "Sie saßen alle _____ den Tisch."
+choices = ["durch", "für", "gegen", "um"]
+correct = 3
+explanation = "um (+Akk): around; at (a clock time)."
+
+[[questions]]
+question = "Er ist _____ elf Uhr gekommen."
+choices = ["um", "ohne", "bis", "durch"]
+correct = 0
+explanation = "um (+Akk): around; at (a clock time)."

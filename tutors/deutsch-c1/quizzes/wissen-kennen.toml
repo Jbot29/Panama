@@ -1,0 +1,31 @@
+topic = "wissen vs. kennen"
+
+[[questions]]
+question = "_____ du meinen Bruder?"
+choices = ["Kennst", "Weißt", "Kennt", "Weiß"]
+correct = 0
+explanation = "kennen = mit einer Person/einem Ort vertraut sein. Objekt ist hier eine Person (meinen Bruder)."
+
+[[questions]]
+question = "Er _____ Berlin sehr gut."
+choices = ["weiß", "kennt", "weißt", "kennst"]
+correct = 1
+explanation = "kennen = vertraut sein mit Orten. Objekt ist ein Ort (Berlin)."
+
+[[questions]]
+question = "_____ du, wie er heißt?"
+choices = ["Kennst", "Kennt", "Weißt", "Weiß"]
+correct = 2
+explanation = "wissen = Fakten/Informationen, oft mit Nebensatz (wie/dass/wann …)."
+
+[[questions]]
+question = "Ich _____, wann der Film beginnt."
+choices = ["kenne", "kennt", "weißt", "weiß"]
+correct = 3
+explanation = "wissen = Fakten/Informationen, hier mit Nebensatz (wann …)."
+
+[[questions]]
+question = "_____ du, wie man einen Kuchen bäckt?"
+choices = ["Weißt", "Kennst", "Weiß", "Kennt"]
+correct = 0
+explanation = "wissen = Fakten/Wissen, hier mit Nebensatz (wie …)."

@@ -1,0 +1,133 @@
+topic = "Temporale Präpositionen"
+
+[[questions]]
+question = "täglich _____ 9 Uhr geöffnet"
+choices = ["ab", "am", "bis", "für"]
+correct = 0
+explanation = "ab (+Dat): from … onwards (a time/day/date). (open daily from 9 a.m.)"
+
+[[questions]]
+question = "Ich bin _____ dem 30. August wieder zu Hause."
+choices = ["gegen", "ab", "im", "nach"]
+correct = 1
+explanation = "ab (+Dat): from … onwards (a time/day/date)."
+
+[[questions]]
+question = "Wir treffen uns _____ Montag, dem 25. November."
+choices = ["seit", "über", "am", "um"]
+correct = 2
+explanation = "an/am (+Dat): on (a day or date)."
+
+[[questions]]
+question = "_____ morgen!"
+choices = ["Vor", "Während", "Von … bis", "Bis"]
+correct = 3
+explanation = "bis (+Akk): till/until; by (a time, day, date). (see you tomorrow!)"
+
+[[questions]]
+question = "Es muss _____ Freitag fertig sein."
+choices = ["bis", "ab", "am", "für"]
+correct = 0
+explanation = "bis (+Akk): till/until; by (a time, day, date). (by Friday)"
+
+[[questions]]
+question = "Warte, _____ ich zurückkomme."
+choices = ["gegen", "bis", "im", "nach"]
+correct = 1
+explanation = "bis (+Akk): till/until; by (a time, day, date). (until I get back)"
+
+[[questions]]
+question = "Wir werden _____ zwei Wochen verreisen."
+choices = ["seit", "über", "für", "um"]
+correct = 2
+explanation = "für (+Akk): for (a fixed time period)."
+
+[[questions]]
+question = "Wir waren mal _____ eine Woche in Rom."
+choices = ["vor", "während", "von … bis", "für"]
+correct = 3
+explanation = "für (+Akk): for (a fixed time period)."
+
+[[questions]]
+question = "Wir werden _____ 18 Uhr ankommen."
+choices = ["gegen", "ab", "am", "bis"]
+correct = 0
+explanation = "gegen (+Akk): around (an approximate time of day). (around 6 p.m.)"
+
+[[questions]]
+question = "Die besten Reiseziele _____ Oktober 2019"
+choices = ["für", "im", "gegen", "nach"]
+correct = 1
+explanation = "in/im (+Dat): in (a month or season)."
+
+[[questions]]
+question = "Die besten Reiseziele _____ Sommer 2019"
+choices = ["seit", "über", "im", "um"]
+correct = 2
+explanation = "in/im (+Dat): in (a month or season)."
+
+[[questions]]
+question = "_____ 18 Uhr nur per Handy erreichbar"
+choices = ["vor", "während", "von … bis", "nach"]
+correct = 3
+explanation = "nach (+Dat): after (a time, day, date). (after 6 p.m.)"
+
+[[questions]]
+question = "Ich wohne hier _____ 2001."
+choices = ["seit", "ab", "am", "bis"]
+correct = 0
+explanation = "seit (+Dat): since / for (an ongoing period)."
+
+[[questions]]
+question = "Wir werden _____ die Feiertage durchgehend geöffnet sein."
+choices = ["für", "über", "gegen", "im"]
+correct = 1
+explanation = "über (+Akk): over (a span of time)."
+
+[[questions]]
+question = "Der Unterricht beginnt _____ 9 Uhr."
+choices = ["nach", "seit", "um", "über"]
+correct = 2
+explanation = "um (+Akk): at (an exact clock time); um die … = around (an age). (class starts at 9:00)"
+
+[[questions]]
+question = "Sie muss _____ die vierzig sein."
+choices = ["vor", "während", "von … bis", "um"]
+correct = 3
+explanation = "um (+Akk): at (an exact clock time); um die … = around (an age). (around forty)"
+
+[[questions]]
+question = "_____ 11 Uhr bis 12.30 Uhr"
+choices = ["von", "um", "vor", "während"]
+correct = 0
+explanation = "von … bis (+Dat … Akk): from … to/till (times or days). (from 11:00 to 12:30)"
+
+[[questions]]
+question = "Geöffnet _____ Montag bis Freitag"
+choices = ["von … bis", "von", "ab", "am"]
+correct = 1
+explanation = "von … bis (+Dat … Akk): from … to/till (times or days). (from Monday to Friday)"
+
+[[questions]]
+question = "Bitte nicht _____ 8 Uhr anrufen."
+choices = ["nach", "seit", "vor", "über"]
+correct = 2
+explanation = "vor (+Dat): before (a time, day, date). (don't call before 8 a.m.)"
+
+[[questions]]
+question = "Sie müssen mir _____ Freitag Bescheid geben."
+choices = ["um", "während", "von … bis", "vor"]
+correct = 3
+explanation = "vor (+Dat): before (a time, day, date). (before Friday)"
+
+[[questions]]
+question = "_____ der Ferien"
+choices = ["während", "ab", "am", "bis"]
+correct = 0
+explanation = "während (+Gen): during / while (a span of time). (during the holidays)"
+
+[[questions]]
+question = "_____ wir weg waren"
+choices = ["für", "während", "gegen", "im"]
+correct = 1
+explanation = "während (+Gen): during / while (a span of time). (while we were away)"
