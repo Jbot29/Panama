@@ -86,6 +86,13 @@ pub struct MyApp {
     // When Some, the active session is an "office hours" chat (no node, free-form
     // diagnostic conversation) and this holds its system prompt.
     pub tutor_office_hours_prompt: Option<String>,
+    // When true, the active free-form session is a "design a project" chat. It
+    // reuses the office-hours system-prompt override (so the send/poll path is
+    // unchanged) but swaps the UI chrome and enables "Save as Project".
+    pub tutor_project_design: bool,
+    // Receives the final markdown brief emitted when the user hits "Save as
+    // Project". Routed to file-writing (not the chat) by poll_project_save.
+    pub tutor_project_save_rx: Option<std::sync::mpsc::Receiver<Result<String, String>>>,
     // Create tutor flow
     pub create_tutor_subject: String,
     pub create_tutor_context: String,
@@ -177,6 +184,8 @@ impl MyApp {
             tutor_detail_new_node_desc: String::new(),
             tutor_pinned_node_id: None,
             tutor_office_hours_prompt: None,
+            tutor_project_design: false,
+            tutor_project_save_rx: None,
             card_chat_messages: Vec::new(),
             card_chat_input: String::new(),
             card_chat_loading: false,
@@ -864,6 +873,7 @@ impl MyApp {
         );
 
         self.tutor_office_hours_prompt = Some(system.clone());
+        self.tutor_project_design = false;
         self.tutor_current_node = None;
         self.tutor_pinned_node_id = None;
         self.tutor_messages.clear();
@@ -875,12 +885,180 @@ impl MyApp {
         self.tutor_state = crate::tutor::TutorState::Loading;
     }
 
+    /// Start a "design a project" session. Like office hours it's a free-form,
+    /// no-objective chat grounded in a live node-mastery snapshot — but its goal
+    /// is to converge on ONE integrative, real-world project tailored to where
+    /// the learner is, then save it as a markdown brief. The deliverable lives
+    /// outside the app; this session produces the brief and discusses it.
+    pub fn init_project_design(&mut self) {
+        if self.tutor_state == crate::tutor::TutorState::Loading {
+            return;
+        }
+        let Some(slug) = self.active_tutor_slug.clone() else { return };
+        let Some(config) = self.active_tutor_config.clone() else { return };
+        let conn = self.conn.as_ref().expect("DB not connected");
+        let nodes = crate::tutor::load_tutor_nodes(conn, &slug).unwrap_or_default();
+
+        // Snapshot of where the learner stands, struggling topics first — the
+        // project should lean on what they're shaky on or have recently touched.
+        let mut state = String::new();
+        if nodes.is_empty() {
+            state.push_str("They haven't tracked any specific topics yet — ask what they've been learning.");
+        } else {
+            let mut sorted = nodes.clone();
+            sorted.sort_by(|a, b| {
+                a.mastery_score
+                    .partial_cmp(&b.mastery_score)
+                    .unwrap_or(std::cmp::Ordering::Equal)
+            });
+            state.push_str("Where they currently stand (mastery 0–100%):\n");
+            for n in &sorted {
+                let tag = if n.mastery_score < 0.6 { "STRUGGLING" } else { "solid" };
+                state.push_str(&format!(
+                    "- {tag}: {} ({:.0}%)\n",
+                    n.name,
+                    n.mastery_score * 100.0
+                ));
+            }
+        }
+
+        let system = format!(
+            "You are a project mentor helping a learner studying \"{subject}\" invent ONE hands-on \
+             project worth building — the kind of integrative task that forces them to put concepts \
+             together rather than drill one rule in isolation.\n\n\
+             {state}\n\n\
+             What makes a great project here: it's concrete and real-world (a tiny tool, a dataset, a \
+             study, an artifact), it weaves together SEVERAL of the topics above — especially the ones \
+             they're shaky on — and it has clear steps plus a reflection at the end that makes them \
+             explain WHY it worked.\n\n\
+             CRUCIAL — don't pre-label the pieces. Textbook problems hand you the identification for free \
+             (\"here's the rate, integrate it\"; \"here's the prior, here's the likelihood, apply Bayes\"), \
+             but working out WHAT you're holding and which role each part plays is the actual hard part of \
+             using the idea in the wild — and it's where real understanding lives. Design the project so the \
+             learner must look at raw material and figure out for themselves what they have and how the parts \
+             fit before they can act, and so that mis-identifying it (a running total mistaken for a rate, a \
+             conditional read backwards) visibly leads them wrong. Push for that harder starting point — \
+             otherwise it's just an open-air quiz.\n\n\
+             The deliverable is something they build outside this app (code, a \
+             plot, a notebook, a drawing, a written piece); your job is to design the brief, not grade \
+             it. A model of the right level: \"you only get a server's ever-climbing request counter; \
+             recover throughput by differencing, find spikes by differencing again, then reconstruct \
+             the lost counter by summing it back up — and notice the missing +C is just where you \
+             started watching.\" One scenario, several ideas integrated, a reflection that lands the point.\n\n\
+             Talk like a sharp friend brainstorming, not a syllabus. Open by asking what they'd find \
+             fun or useful to make, and pitch one tailored idea to react to. Go back and forth to sharpen \
+             scope — harder, easier, different domain — until they're excited. Keep replies fairly short. \
+             When they're happy they'll click \"Save as Project\" to write up the brief, so you don't \
+             need to dump the full write-up in chat unless they ask. Use Markdown and Unicode math; never LaTeX.",
+            subject = config.friendly_name,
+            state = state,
+        );
+
+        // Reuse the office-hours override so tutor_send_message/poll_tutor work
+        // unchanged; the bool flag only switches UI chrome + the save action.
+        self.tutor_office_hours_prompt = Some(system.clone());
+        self.tutor_project_design = true;
+        self.tutor_current_node = None;
+        self.tutor_pinned_node_id = None;
+        self.tutor_messages.clear();
+
+        let kickoff = vec![serde_json::json!({"role": "user", "content": "Start"})];
+        let (tx, rx) = std::sync::mpsc::channel();
+        crate::tutor::ask_claude_raw(system, kickoff, 1024, tx);
+        self.tutor_rx = Some(rx);
+        self.tutor_state = crate::tutor::TutorState::Loading;
+    }
+
+    /// Fire a one-shot request that turns the current design conversation into a
+    /// clean, standalone markdown brief. The result is routed to file-writing by
+    /// poll_project_save, not back into the chat.
+    pub fn save_project(&mut self) {
+        if self.tutor_state == crate::tutor::TutorState::Loading
+            || self.tutor_project_save_rx.is_some()
+        {
+            return;
+        }
+        let Some(system) = self.tutor_office_hours_prompt.clone() else { return };
+
+        let mut api_messages = vec![serde_json::json!({"role": "user", "content": "Start"})];
+        for m in &self.tutor_messages {
+            if m.role != "system" {
+                api_messages.push(serde_json::json!({"role": m.role, "content": m.content}));
+            }
+        }
+        api_messages.push(serde_json::json!({
+            "role": "user",
+            "content": "Write up the project we landed on as a clean, standalone markdown brief the \
+                learner can follow on their own later. The VERY FIRST line must be a title as an `# H1` \
+                heading and nothing else. Then: a short Goal, a Scenario if it helps, numbered Steps, \
+                and a short Reflect section with a few questions. Keep the voice we used. Output only the \
+                brief — no preamble, no sign-off."
+        }));
+
+        let (tx, rx) = std::sync::mpsc::channel();
+        crate::tutor::ask_claude_raw(system, api_messages, 2048, tx);
+        self.tutor_project_save_rx = Some(rx);
+        self.tutor_state = crate::tutor::TutorState::Loading;
+    }
+
+    /// Receive the emitted brief, derive a title/slug from its first line, and
+    /// write it to tutors/<slug>/projects/<title>.md. Confirms in-chat.
+    pub fn poll_project_save(&mut self, ctx: &egui::Context) {
+        use std::sync::mpsc::TryRecvError;
+        let Some(rx) = &self.tutor_project_save_rx else { return };
+        match rx.try_recv() {
+            Ok(result) => {
+                self.tutor_state = crate::tutor::TutorState::Idle;
+                self.tutor_project_save_rx = None;
+                let Some(slug) = self.active_tutor_slug.clone() else { return };
+                let feedback = match result {
+                    Ok(brief) => self.write_project_brief(&slug, &brief),
+                    Err(e) => format!("→ Couldn't save project: {e}"),
+                };
+                self.tutor_messages.push(crate::tutor::TutorMessage {
+                    role: "system".into(),
+                    content: feedback,
+                });
+            }
+            Err(TryRecvError::Empty) => {
+                ctx.request_repaint_after(std::time::Duration::from_millis(100));
+            }
+            Err(TryRecvError::Disconnected) => {
+                self.tutor_state = crate::tutor::TutorState::Idle;
+                self.tutor_project_save_rx = None;
+            }
+        }
+    }
+
+    /// Write a brief to tutors/<slug>/projects/<title>.md, returning a status
+    /// line for the chat. The title comes from the first non-empty line.
+    fn write_project_brief(&self, slug: &str, brief: &str) -> String {
+        let title = brief
+            .lines()
+            .map(|l| l.trim_start_matches('#').trim())
+            .find(|l| !l.is_empty())
+            .unwrap_or("project");
+        let file_slug = crate::ui_create_tutor::slugify(title);
+        let file_slug = if file_slug.is_empty() { "project".to_string() } else { file_slug };
+
+        let dir = crate::config::tutors_dir().join(slug).join("projects");
+        if let Err(e) = std::fs::create_dir_all(&dir) {
+            return format!("→ Couldn't create projects folder: {e}");
+        }
+        let path = dir.join(format!("{file_slug}.md"));
+        match std::fs::write(&path, brief) {
+            Ok(_) => format!("→ Saved project \"{title}\" → tutors/{slug}/projects/{file_slug}.md"),
+            Err(e) => format!("→ Couldn't write project file: {e}"),
+        }
+    }
+
     pub fn init_tutor_session(&mut self) {
         if self.tutor_state == crate::tutor::TutorState::Loading {
             return;
         }
-        // A normal node session is never office hours.
+        // A normal node session is never office hours or project design.
         self.tutor_office_hours_prompt = None;
+        self.tutor_project_design = false;
         let Some(slug) = self.active_tutor_slug.clone() else { return };
         let Some(config) = self.active_tutor_config.clone() else { return };
         let conn = self.conn.as_ref().expect("DB not connected");

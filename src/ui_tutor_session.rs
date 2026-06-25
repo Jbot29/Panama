@@ -13,16 +13,24 @@ pub fn ui_tutor_session(app: &mut MyApp, ui: &mut egui::Ui) {
     ui.horizontal(|ui| {
         if ui.button("< Tutors").clicked() {
             app.tutor_office_hours_prompt = None;
+            app.tutor_project_design = false;
             app.load_available_tutors();
             app.view = View::Tutors;
         }
         let office_hours = app.tutor_office_hours_prompt.is_some();
+        let project_design = app.tutor_project_design;
         if let Some(node) = &app.tutor_current_node {
             let mastery_pct = (node.mastery_score * 100.0).round() as u32;
             ui.label(
                 RichText::new(format!("{}  (mastery {}%)", node.name, mastery_pct))
                     .size(16.0)
                     .color(Color32::from_rgb(180, 200, 255)),
+            );
+        } else if project_design {
+            ui.label(
+                RichText::new("🛠 Design a Project")
+                    .size(16.0)
+                    .color(Color32::from_rgb(210, 190, 140)),
             );
         } else if office_hours {
             ui.label(
@@ -34,7 +42,24 @@ pub fn ui_tutor_session(app: &mut MyApp, ui: &mut egui::Ui) {
             ui.label("Picking topic...");
         }
         ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
-            if office_hours {
+            if project_design {
+                // Free-form design chat: leave, or write the brief to a file.
+                if ui.button("Done").clicked() {
+                    app.tutor_office_hours_prompt = None;
+                    app.tutor_project_design = false;
+                    app.load_available_tutors();
+                    app.view = View::Tutors;
+                }
+                let can_save = app.tutor_state == TutorState::Idle
+                    && app.tutor_project_save_rx.is_none()
+                    && app.tutor_messages.iter().any(|m| m.role == "assistant");
+                if ui
+                    .add_enabled(can_save, egui::Button::new("💾 Save as Project"))
+                    .clicked()
+                {
+                    app.save_project();
+                }
+            } else if office_hours {
                 // No mastery rating in office hours — it isn't a graded node.
                 if ui.button("Done").clicked() {
                     app.tutor_office_hours_prompt = None;

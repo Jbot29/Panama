@@ -33,7 +33,7 @@ pub fn parse_tutor_response(text: &str) -> Option<GeneratedTutor> {
     Some(GeneratedTutor { friendly_name, slug, system_prompt, nodes })
 }
 
-fn slugify(s: &str) -> String {
+pub(crate) fn slugify(s: &str) -> String {
     s.to_lowercase()
         .chars()
         .map(|c| if c.is_alphanumeric() { c } else { '-' })

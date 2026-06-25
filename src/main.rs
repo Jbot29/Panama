@@ -38,6 +38,7 @@ impl eframe::App for MyApp {
         self.poll_card_chat(ctx);
         self.poll_create_tutor(ctx);
         self.poll_detail_quiz(ctx);
+        self.poll_project_save(ctx);
 
         egui::TopBottomPanel::top("top_nav").show(ctx, |ui| {
             ui.horizontal(|ui| {
